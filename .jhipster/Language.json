@@ -1,0 +1,31 @@
+{
+    "name": "Language",
+    "fields": [
+        {
+            "fieldName": "isoLanguageCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "25"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200522215400",
+    "entityTableName": "language",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

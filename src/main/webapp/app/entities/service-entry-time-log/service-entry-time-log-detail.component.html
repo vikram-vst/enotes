@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceEntryTimeLog">
+            <h2><span jhiTranslate="enotesApp.serviceEntryTimeLog.detail.title">Service Entry Time Log</span> {{ serviceEntryTimeLog.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceEntryTimeLog.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntryTimeLog.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntryTimeLog.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntryTimeLog.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntryTimeLog.serviceEntry">Service Entry</span></dt>
+                <dd>
+                    <div *ngIf="serviceEntryTimeLog.serviceEntry">
+                        <a [routerLink]="['/service-entry', serviceEntryTimeLog.serviceEntry?.id, 'view']">{{ serviceEntryTimeLog.serviceEntry?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntryTimeLog.modifiedBy">Modified By</span></dt>
+                <dd>
+                    {{ serviceEntryTimeLog.modifiedBy?.id }}
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntryTimeLog.createdBy">Created By</span></dt>
+                <dd>
+                    {{ serviceEntryTimeLog.createdBy?.id }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-entry-time-log', serviceEntryTimeLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

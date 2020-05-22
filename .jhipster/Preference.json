@@ -1,0 +1,36 @@
+{
+    "name": "Preference",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "25"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "preferenceType",
+            "otherEntityRelationshipName": "preference",
+            "relationshipName": "preferenceType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200522215200",
+    "entityTableName": "preference",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

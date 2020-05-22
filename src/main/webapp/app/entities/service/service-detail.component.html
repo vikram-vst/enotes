@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="service">
+            <h2><span jhiTranslate="enotesApp.service.detail.title">Service</span> {{ service.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.service.title">Title</span></dt>
+                <dd>
+                    <span>{{ service.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.sequenceNo">Sequence No</span></dt>
+                <dd>
+                    <span>{{ service.sequenceNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{ service.startTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.endTime">End Time</span></dt>
+                <dd>
+                    <span>{{ service.endTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ service.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ service.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.recurrence">Recurrence</span></dt>
+                <dd>
+                    <span>{{ service.recurrence }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.interval">Interval</span></dt>
+                <dd>
+                    <span>{{ service.interval }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.gracePeriod">Grace Period</span></dt>
+                <dd>
+                    <span>{{ service.gracePeriod }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{ service.imagePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ service.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ service.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="service.category">
+                        <a [routerLink]="['/service-category', service.category?.id, 'view']">{{ service.category?.title }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.service.frequency">Frequency</span></dt>
+                <dd>
+                    <div *ngIf="service.frequency">
+                        <a [routerLink]="['/frequency', service.frequency?.id, 'view']">{{ service.frequency?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service', service.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

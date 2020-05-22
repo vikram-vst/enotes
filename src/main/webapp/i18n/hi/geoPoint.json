@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "geoPoint": {
+      "home": {
+        "title": "GeoPoints",
+        "createLabel": "नया Geo Point बनाएँ",
+        "createOrEditLabel": "Geo Point बनाएँ या संपादित करें",
+        "notFound": "No Geo Points found"
+      },
+      "created": "एक नया Geo Point [identifier: {{ param }}] तैयार है",
+      "updated": "एक Geo Point [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Geo Point [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Geo Point [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Geo Point"
+      },
+      "latitude": "Latitude",
+      "longitude": "Longitude"
+    }
+  }
+}

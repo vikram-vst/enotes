@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "geoAssoc": {
+      "home": {
+        "title": "Geo Assocs",
+        "createLabel": "కొత్త Geo Assoc  సృష్టించండి",
+        "createOrEditLabel": "Geo Assoc సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Geo Assocs found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Geo Assoc సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Geo Assoc సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Geo Assoc తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Geo Assoc {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Geo Assoc"
+      },
+      "geo": "Geo",
+      "geoTo": "Geo To",
+      "geoAssocType": "Geo Assoc Type"
+    }
+  }
+}

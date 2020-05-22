@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="otpAuth">
+            <h2><span jhiTranslate="enotesApp.otpAuth.detail.title">Otp Auth</span> {{ otpAuth.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.otpAuth.otp">Otp</span></dt>
+                <dd>
+                    <span>{{ otpAuth.otp }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.otpSent">Otp Sent</span></dt>
+                <dd>
+                    <span>{{ otpAuth.otpSent }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.verificationSuccess">Verification Success</span></dt>
+                <dd>
+                    <span>{{ otpAuth.verificationSuccess }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.otpExpired">Otp Expired</span></dt>
+                <dd>
+                    <span>{{ otpAuth.otpExpired }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.otpSentTime">Otp Sent Time</span></dt>
+                <dd>
+                    <span>{{ otpAuth.otpSentTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.sentCounter">Sent Counter</span></dt>
+                <dd>
+                    <span>{{ otpAuth.sentCounter }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.failCounter">Fail Counter</span></dt>
+                <dd>
+                    <span>{{ otpAuth.failCounter }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.otpResetCounter">Otp Reset Counter</span></dt>
+                <dd>
+                    <span>{{ otpAuth.otpResetCounter }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.maxResend">Max Resend</span></dt>
+                <dd>
+                    <span>{{ otpAuth.maxResend }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.maxReset">Max Reset</span></dt>
+                <dd>
+                    <span>{{ otpAuth.maxReset }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.maxFailures">Max Failures</span></dt>
+                <dd>
+                    <span>{{ otpAuth.maxFailures }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.otpActiveTime">Otp Active Time</span></dt>
+                <dd>
+                    <span>{{ otpAuth.otpActiveTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ otpAuth.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ otpAuth.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.otpAuth.user">User</span></dt>
+                <dd>
+                    {{ otpAuth.user?.login }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/otp-auth', otpAuth.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

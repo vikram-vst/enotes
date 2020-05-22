@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "geoPoint": {
+      "home": {
+        "title": "Geo Points",
+        "createLabel": "Create a new Geo Point",
+        "createOrEditLabel": "Create or edit a Geo Point",
+        "notFound": "No Geo Points found"
+      },
+      "created": "A new Geo Point is created with identifier {{ param }}",
+      "updated": "A Geo Point is updated with identifier {{ param }}",
+      "deleted": "A Geo Point is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Geo Point {{ id }}?"
+      },
+      "detail": {
+        "title": "Geo Point"
+      },
+      "latitude": "Latitude",
+      "longitude": "Longitude"
+    }
+  }
+}

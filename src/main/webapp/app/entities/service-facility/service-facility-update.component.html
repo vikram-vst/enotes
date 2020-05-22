@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="sys-service-facility-heading" jhiTranslate="enotesApp.serviceFacility.home.createOrEditLabel">Create or edit a Service Facility</h2>
+
+            <div>
+                <sys-alert-error></sys-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.fromDate" for="field_fromDate">From Date</label>
+                    <div class="d-flex">
+                        <input id="field_fromDate" type="datetime-local" class="form-control" name="fromDate" formControlName="fromDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.thruDate" for="field_thruDate">Thru Date</label>
+                    <div class="d-flex">
+                        <input id="field_thruDate" type="datetime-local" class="form-control" name="thruDate" formControlName="thruDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.startTime" for="field_startTime">Start Time</label>
+                    <input type="number" class="form-control" name="startTime" id="field_startTime"
+                           formControlName="startTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.endTime" for="field_endTime">End Time</label>
+                    <input type="number" class="form-control" name="endTime" id="field_endTime"
+                           formControlName="endTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" formControlName="startDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" formControlName="endDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.recurrence" for="field_recurrence">Recurrence</label>
+                    <input type="number" class="form-control" name="recurrence" id="field_recurrence"
+                           formControlName="recurrence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.interval" for="field_interval">Interval</label>
+                    <input type="number" class="form-control" name="interval" id="field_interval"
+                           formControlName="interval"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.gracePeriod" for="field_gracePeriod">Grace Period</label>
+                    <input type="number" class="form-control" name="gracePeriod" id="field_gracePeriod"
+                           formControlName="gracePeriod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" formControlName="createdDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.lastModifiedDate" for="field_lastModifiedDate">Last Modified Date</label>
+                    <div class="d-flex">
+                        <input id="field_lastModifiedDate" type="datetime-local" class="form-control" name="lastModifiedDate" formControlName="lastModifiedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceFacility.frequency" for="field_frequency">Frequency</label>
+                    <select class="form-control" id="field_frequency" name="frequency" formControlName="frequency">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="frequencyOption.id === editForm.get('frequency')!.value?.id ? editForm.get('frequency')!.value : frequencyOption" *ngFor="let frequencyOption of frequencies; trackBy: trackById">{{ frequencyOption.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

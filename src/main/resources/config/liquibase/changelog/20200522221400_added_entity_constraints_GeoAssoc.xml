@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity GeoAssoc.
+    -->
+    <changeSet id="20200522221400-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="geo_id"
+                                 baseTableName="geo_assoc"
+                                 constraintName="fk_geo_assoc_geo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="geo"/>
+
+        <addForeignKeyConstraint baseColumnNames="geo_to_id"
+                                 baseTableName="geo_assoc"
+                                 constraintName="fk_geo_assoc_geo_to_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="geo"/>
+
+        <addForeignKeyConstraint baseColumnNames="geo_assoc_type_id"
+                                 baseTableName="geo_assoc"
+                                 constraintName="fk_geo_assoc_geo_assoc_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="geo_assoc_type"/>
+
+    </changeSet>
+</databaseChangeLog>

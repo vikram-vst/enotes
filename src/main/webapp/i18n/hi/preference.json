@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "preference": {
+      "home": {
+        "title": "Preferences",
+        "createLabel": "नया Preference बनाएँ",
+        "createOrEditLabel": "Preference बनाएँ या संपादित करें",
+        "notFound": "No Preferences found"
+      },
+      "created": "एक नया Preference [identifier: {{ param }}] तैयार है",
+      "updated": "एक Preference [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Preference [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Preference [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Preference"
+      },
+      "name": "Name",
+      "preferenceType": "Preference Type"
+    }
+  }
+}

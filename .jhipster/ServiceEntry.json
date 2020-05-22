@@ -1,0 +1,81 @@
+{
+    "name": "ServiceEntry",
+    "fields": [
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "initiatedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "serviceStartDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "serviceEndDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "entry",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "serviceEntry",
+            "relationshipName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "status",
+            "otherEntityRelationshipName": "serviceEntry",
+            "relationshipName": "status",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceDefinition",
+            "otherEntityRelationshipName": "serviceEntry",
+            "relationshipValidateRules": "required",
+            "relationshipName": "serviceDefinition",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "geoPoint",
+            "otherEntityRelationshipName": "serviceEntry",
+            "relationshipName": "geoPoint",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "serviceEntry",
+            "relationshipName": "address",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200522220800",
+    "entityTableName": "service_entry",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "name": "ServiceFacility",
+    "fields": [
+        {
+            "fieldName": "fromDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "thruDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "recurrence",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "interval",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "gracePeriod",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "frequency",
+            "otherEntityRelationshipName": "serviceFacility",
+            "relationshipName": "frequency",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200522220500",
+    "entityTableName": "service_facility",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

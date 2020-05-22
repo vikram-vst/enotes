@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "geoAssoc": {
+      "home": {
+        "title": "GeoAssocs",
+        "createLabel": "नया Geo Assoc बनाएँ",
+        "createOrEditLabel": "Geo Assoc बनाएँ या संपादित करें",
+        "notFound": "No Geo Assocs found"
+      },
+      "created": "एक नया Geo Assoc [identifier: {{ param }}] तैयार है",
+      "updated": "एक Geo Assoc [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Geo Assoc [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Geo Assoc [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Geo Assoc"
+      },
+      "geo": "Geo",
+      "geoTo": "Geo To",
+      "geoAssocType": "Geo Assoc Type"
+    }
+  }
+}

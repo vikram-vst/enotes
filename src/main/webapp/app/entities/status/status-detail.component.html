@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="status">
+            <h2><span jhiTranslate="enotesApp.status.detail.title">Status</span> {{ status.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.status.name">Name</span></dt>
+                <dd>
+                    <span>{{ status.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.status.sequenceNo">Sequence No</span></dt>
+                <dd>
+                    <span>{{ status.sequenceNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.status.description">Description</span></dt>
+                <dd>
+                    <span>{{ status.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.status.type">Type</span></dt>
+                <dd>
+                    <span>{{ status.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.status.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="status.category">
+                        <a [routerLink]="['/status-category', status.category?.id, 'view']">{{ status.category?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/status', status.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

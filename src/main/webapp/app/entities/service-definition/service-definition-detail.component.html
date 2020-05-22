@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceDefinition">
+            <h2><span jhiTranslate="enotesApp.serviceDefinition.detail.title">Service Definition</span> {{ serviceDefinition.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.title">Title</span></dt>
+                <dd>
+                    <span>{{ serviceDefinition.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.version">Version</span></dt>
+                <dd>
+                    <span>{{ serviceDefinition.version }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{ serviceDefinition.imagePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceDefinition.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceDefinition.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.fields">Fields</span></dt>
+                <dd>
+                    <span>{{ serviceDefinition.fields }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="serviceDefinition.status">
+                        <a [routerLink]="['/status', serviceDefinition.status?.id, 'view']">{{ serviceDefinition.status?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceDefinition.service">Service</span></dt>
+                <dd>
+                    <div *ngIf="serviceDefinition.service">
+                        <a [routerLink]="['/service', serviceDefinition.service?.id, 'view']">{{ serviceDefinition.service?.title }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-definition', serviceDefinition.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

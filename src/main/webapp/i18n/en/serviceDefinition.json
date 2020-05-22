@@ -1,0 +1,29 @@
+{
+  "enotesApp": {
+    "serviceDefinition": {
+      "home": {
+        "title": "Service Definitions",
+        "createLabel": "Create a new Service Definition",
+        "createOrEditLabel": "Create or edit a Service Definition",
+        "notFound": "No Service Definitions found"
+      },
+      "created": "A new Service Definition is created with identifier {{ param }}",
+      "updated": "A Service Definition is updated with identifier {{ param }}",
+      "deleted": "A Service Definition is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Definition {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Definition"
+      },
+      "title": "Title",
+      "version": "Version",
+      "imagePath": "Image Path",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "fields": "Fields",
+      "status": "Status",
+      "service": "Service"
+    }
+  }
+}

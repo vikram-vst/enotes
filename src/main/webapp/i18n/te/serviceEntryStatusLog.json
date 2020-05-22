@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "serviceEntryStatusLog": {
+      "home": {
+        "title": "Service Entry Status Logs",
+        "createLabel": "కొత్త Service Entry Status Log  సృష్టించండి",
+        "createOrEditLabel": "Service Entry Status Log సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Service Entry Status Logs found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry Status Log సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry Status Log సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry Status Log తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Service Entry Status Log {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Service Entry Status Log"
+      },
+      "createdDate": "Created Date",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

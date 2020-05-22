@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "serviceProviderRole": {
+      "home": {
+        "title": "ServiceProviderRoles",
+        "createLabel": "नया Service Provider Role बनाएँ",
+        "createOrEditLabel": "Service Provider Role बनाएँ या संपादित करें",
+        "notFound": "No Service Provider Roles found"
+      },
+      "created": "एक नया Service Provider Role [identifier: {{ param }}] तैयार है",
+      "updated": "एक Service Provider Role [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Service Provider Role [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Service Provider Role [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Service Provider Role"
+      },
+      "name": "Name",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

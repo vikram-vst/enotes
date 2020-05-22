@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.facility.home.title">Facilities</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-facility" [routerLink]="['/facility/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.facility.home.createLabel">
+            Create a new Facility
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="facilities?.length === 0">
+        <span jhiTranslate="enotesApp.facility.home.notFound">No facilities found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="facilities?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facility.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facility.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facility.facilityType">Facility Type</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facility.productStore">Product Store</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facility.facilityGroup">Facility Group</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facility.owner">Owner</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let facility of facilities ;trackBy: trackId">
+                    <td><a [routerLink]="['/facility', facility.id, 'view']">{{ facility.id }}</a></td>
+                    <td>{{ facility.name }}</td>
+                    <td>{{ facility.description }}</td>
+                    <td>
+                        <div *ngIf="facility.facilityType">
+                            <a [routerLink]="['/facility-type', facility.facilityType?.id, 'view']" >{{ facility.facilityType?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="facility.productStore">
+                            <a [routerLink]="['/product-store', facility.productStore?.id, 'view']" >{{ facility.productStore?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="facility.facilityGroup">
+                            <a [routerLink]="['/facility-group', facility.facilityGroup?.id, 'view']" >{{ facility.facilityGroup?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        {{ facility.owner?.login }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/facility', facility.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/facility', facility.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(facility)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

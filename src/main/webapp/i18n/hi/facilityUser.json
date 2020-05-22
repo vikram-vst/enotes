@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "facilityUser": {
+      "home": {
+        "title": "FacilityUsers",
+        "createLabel": "नया Facility User बनाएँ",
+        "createOrEditLabel": "Facility User बनाएँ या संपादित करें",
+        "notFound": "No Facility Users found"
+      },
+      "created": "एक नया Facility User [identifier: {{ param }}] तैयार है",
+      "updated": "एक Facility User [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Facility User [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Facility User [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Facility User"
+      },
+      "name": "Name",
+      "user": "User",
+      "facility": "Facility"
+    }
+  }
+}

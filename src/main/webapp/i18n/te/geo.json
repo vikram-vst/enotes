@@ -1,0 +1,25 @@
+{
+  "enotesApp": {
+    "geo": {
+      "home": {
+        "title": "Geos",
+        "createLabel": "కొత్త Geo  సృష్టించండి",
+        "createOrEditLabel": "Geo సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Geos found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Geo సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Geo సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Geo తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Geo {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Geo"
+      },
+      "name": "Name",
+      "code": "Code",
+      "abbreviation": "Abbreviation",
+      "geoType": "Geo Type"
+    }
+  }
+}

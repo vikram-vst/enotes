@@ -1,0 +1,95 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.service.home.title">Services</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service" [routerLink]="['/service/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.service.home.createLabel">
+            Create a new Service
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="services?.length === 0">
+        <span jhiTranslate="enotesApp.service.home.notFound">No services found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="services?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.title">Title</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.sequenceNo">Sequence No</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.startTime">Start Time</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.endTime">End Time</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.startDate">Start Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.endDate">End Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.recurrence">Recurrence</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.interval">Interval</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.gracePeriod">Grace Period</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.imagePath">Image Path</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.createdDate">Created Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.lastModifiedDate">Last Modified Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.category">Category</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.service.frequency">Frequency</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of services ;trackBy: trackId">
+                    <td><a [routerLink]="['/service', service.id, 'view']">{{ service.id }}</a></td>
+                    <td>{{ service.title }}</td>
+                    <td>{{ service.sequenceNo }}</td>
+                    <td>{{ service.startTime }}</td>
+                    <td>{{ service.endTime }}</td>
+                    <td>{{ service.startDate | date:'medium' }}</td>
+                    <td>{{ service.endDate | date:'medium' }}</td>
+                    <td>{{ service.recurrence }}</td>
+                    <td>{{ service.interval }}</td>
+                    <td>{{ service.gracePeriod }}</td>
+                    <td>{{ service.imagePath }}</td>
+                    <td>{{ service.createdDate | date:'medium' }}</td>
+                    <td>{{ service.lastModifiedDate | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="service.category">
+                            <a [routerLink]="['/service-category', service.category?.id, 'view']" >{{ service.category?.title }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="service.frequency">
+                            <a [routerLink]="['/frequency', service.frequency?.id, 'view']" >{{ service.frequency?.name }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/service', service.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/service', service.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(service)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

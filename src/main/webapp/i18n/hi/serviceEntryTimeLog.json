@@ -1,0 +1,26 @@
+{
+  "enotesApp": {
+    "serviceEntryTimeLog": {
+      "home": {
+        "title": "ServiceEntryTimeLogs",
+        "createLabel": "नया Service Entry Time Log बनाएँ",
+        "createOrEditLabel": "Service Entry Time Log बनाएँ या संपादित करें",
+        "notFound": "No Service Entry Time Logs found"
+      },
+      "created": "एक नया Service Entry Time Log [identifier: {{ param }}] तैयार है",
+      "updated": "एक Service Entry Time Log [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Service Entry Time Log [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Service Entry Time Log [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Service Entry Time Log"
+      },
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "serviceEntry": "Service Entry",
+      "modifiedBy": "Modified By",
+      "createdBy": "Created By"
+    }
+  }
+}

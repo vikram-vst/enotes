@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="person">
+            <h2><span jhiTranslate="enotesApp.person.detail.title">Person</span> {{ person.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.person.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ person.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ person.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.displayName">Display Name</span></dt>
+                <dd>
+                    <span>{{ person.displayName }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.profilePicture">Profile Picture</span></dt>
+                <dd>
+                    <div *ngIf="person.profilePicture">
+                        <a (click)="openFile(person?.profilePictureContentType!, person?.profilePicture)">
+                            <img [src]="'data:' + person.profilePictureContentType + ';base64,' + person.profilePicture" style="max-width: 100%;" alt="person image"/>
+                        </a>
+                        {{ person.profilePictureContentType }}, {{ byteSize(person.profilePicture) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.email">Email</span></dt>
+                <dd>
+                    <span>{{ person.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.birthdate">Birthdate</span></dt>
+                <dd>
+                    <span>{{ person.birthdate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.notes">Notes</span></dt>
+                <dd>
+                    <span>{{ person.notes }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.mobileNumber">Mobile Number</span></dt>
+                <dd>
+                    <span>{{ person.mobileNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ person.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ person.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.user">User</span></dt>
+                <dd>
+                    {{ person.user?.login }}
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="person.status">
+                        <a [routerLink]="['/status', person.status?.id, 'view']">{{ person.status?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.preferredLanguage">Preferred Language</span></dt>
+                <dd>
+                    <div *ngIf="person.preferredLanguage">
+                        <a [routerLink]="['/language', person.preferredLanguage?.id, 'view']">{{ person.preferredLanguage?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.person.gender">Gender</span></dt>
+                <dd>
+                    <div *ngIf="person.gender">
+                        <a [routerLink]="['/gender', person.gender?.id, 'view']">{{ person.gender?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/person', person.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

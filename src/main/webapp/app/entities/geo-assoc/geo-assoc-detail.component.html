@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="geoAssoc">
+            <h2><span jhiTranslate="enotesApp.geoAssoc.detail.title">Geo Assoc</span> {{ geoAssoc.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.geoAssoc.geo">Geo</span></dt>
+                <dd>
+                    <div *ngIf="geoAssoc.geo">
+                        <a [routerLink]="['/geo', geoAssoc.geo?.id, 'view']">{{ geoAssoc.geo?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.geoAssoc.geoTo">Geo To</span></dt>
+                <dd>
+                    <div *ngIf="geoAssoc.geoTo">
+                        <a [routerLink]="['/geo', geoAssoc.geoTo?.id, 'view']">{{ geoAssoc.geoTo?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.geoAssoc.geoAssocType">Geo Assoc Type</span></dt>
+                <dd>
+                    <div *ngIf="geoAssoc.geoAssocType">
+                        <a [routerLink]="['/geo-assoc-type', geoAssoc.geoAssocType?.id, 'view']">{{ geoAssoc.geoAssocType?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/geo-assoc', geoAssoc.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

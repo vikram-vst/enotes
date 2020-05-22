@@ -1,0 +1,27 @@
+{
+  "enotesApp": {
+    "serviceProvider": {
+      "home": {
+        "title": "ServiceProviders",
+        "createLabel": "नया Service Provider बनाएँ",
+        "createOrEditLabel": "Service Provider बनाएँ या संपादित करें",
+        "notFound": "No Service Providers found"
+      },
+      "created": "एक नया Service Provider [identifier: {{ param }}] तैयार है",
+      "updated": "एक Service Provider [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Service Provider [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Service Provider [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Service Provider"
+      },
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "user": "User",
+      "service": "Service"
+    }
+  }
+}

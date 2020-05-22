@@ -1,0 +1,36 @@
+{
+  "enotesApp": {
+    "otpAuth": {
+      "home": {
+        "title": "Otp Auths",
+        "createLabel": "Create a new Otp Auth",
+        "createOrEditLabel": "Create or edit a Otp Auth",
+        "notFound": "No Otp Auths found"
+      },
+      "created": "A new Otp Auth is created with identifier {{ param }}",
+      "updated": "A Otp Auth is updated with identifier {{ param }}",
+      "deleted": "A Otp Auth is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Otp Auth {{ id }}?"
+      },
+      "detail": {
+        "title": "Otp Auth"
+      },
+      "otp": "Otp",
+      "otpSent": "Otp Sent",
+      "verificationSuccess": "Verification Success",
+      "otpExpired": "Otp Expired",
+      "otpSentTime": "Otp Sent Time",
+      "sentCounter": "Sent Counter",
+      "failCounter": "Fail Counter",
+      "otpResetCounter": "Otp Reset Counter",
+      "maxResend": "Max Resend",
+      "maxReset": "Max Reset",
+      "maxFailures": "Max Failures",
+      "otpActiveTime": "Otp Active Time",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "user": "User"
+    }
+  }
+}

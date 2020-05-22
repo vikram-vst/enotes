@@ -1,0 +1,36 @@
+{
+  "enotesApp": {
+    "address": {
+      "home": {
+        "title": "Addresses",
+        "createLabel": "Create a new Address",
+        "createOrEditLabel": "Create or edit a Address",
+        "notFound": "No Addresses found"
+      },
+      "created": "A new Address is created with identifier {{ param }}",
+      "updated": "A Address is updated with identifier {{ param }}",
+      "deleted": "A Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "streetAddress": "Street Address",
+      "streetAddress2": "Street Address 2",
+      "city": "City",
+      "landmark": "Landmark",
+      "postalCode": "Postal Code",
+      "note": "Note",
+      "isDefault": "Is Default",
+      "customAddressType": "Custom Address Type",
+      "status": "Status",
+      "state": "State",
+      "pincode": "Pincode",
+      "country": "Country",
+      "addressType": "Address Type",
+      "geoPoint": "Geo Point",
+      "user": "User"
+    }
+  }
+}

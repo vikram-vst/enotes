@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "facilityUser": {
+      "home": {
+        "title": "Facility Users",
+        "createLabel": "Create a new Facility User",
+        "createOrEditLabel": "Create or edit a Facility User",
+        "notFound": "No Facility Users found"
+      },
+      "created": "A new Facility User is created with identifier {{ param }}",
+      "updated": "A Facility User is updated with identifier {{ param }}",
+      "deleted": "A Facility User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facility User {{ id }}?"
+      },
+      "detail": {
+        "title": "Facility User"
+      },
+      "name": "Name",
+      "user": "User",
+      "facility": "Facility"
+    }
+  }
+}

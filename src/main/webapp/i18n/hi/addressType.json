@@ -1,0 +1,22 @@
+{
+  "enotesApp": {
+    "addressType": {
+      "home": {
+        "title": "AddressTypes",
+        "createLabel": "नया Address Type बनाएँ",
+        "createOrEditLabel": "Address Type बनाएँ या संपादित करें",
+        "notFound": "No Address Types found"
+      },
+      "created": "एक नया Address Type [identifier: {{ param }}] तैयार है",
+      "updated": "एक Address Type [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Address Type [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Address Type [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Address Type"
+      },
+      "name": "Name"
+    }
+  }
+}

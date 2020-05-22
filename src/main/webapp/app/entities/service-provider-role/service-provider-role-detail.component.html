@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceProviderRole">
+            <h2><span jhiTranslate="enotesApp.serviceProviderRole.detail.title">Service Provider Role</span> {{ serviceProviderRole.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceProviderRole.name">Name</span></dt>
+                <dd>
+                    <span>{{ serviceProviderRole.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProviderRole.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceProviderRole.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProviderRole.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceProviderRole.lastModifiedDate }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-provider-role', serviceProviderRole.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

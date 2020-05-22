@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "facilityGroup": {
+      "home": {
+        "title": "FacilityGroups",
+        "createLabel": "नया Facility Group बनाएँ",
+        "createOrEditLabel": "Facility Group बनाएँ या संपादित करें",
+        "notFound": "No Facility Groups found"
+      },
+      "created": "एक नया Facility Group [identifier: {{ param }}] तैयार है",
+      "updated": "एक Facility Group [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Facility Group [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Facility Group [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Facility Group"
+      },
+      "name": "Name",
+      "facilityGroupType": "Facility Group Type"
+    }
+  }
+}

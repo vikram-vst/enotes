@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="facilityUser">
+            <h2><span jhiTranslate="enotesApp.facilityUser.detail.title">Facility User</span> {{ facilityUser.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.facilityUser.name">Name</span></dt>
+                <dd>
+                    <span>{{ facilityUser.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facilityUser.user">User</span></dt>
+                <dd>
+                    {{ facilityUser.user?.login }}
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facilityUser.facility">Facility</span></dt>
+                <dd>
+                    <div *ngIf="facilityUser.facility">
+                        <a [routerLink]="['/facility', facilityUser.facility?.id, 'view']">{{ facilityUser.facility?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/facility-user', facilityUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

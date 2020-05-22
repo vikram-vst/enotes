@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceCategory">
+            <h2><span jhiTranslate="enotesApp.serviceCategory.detail.title">Service Category</span> {{ serviceCategory.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceCategory.title">Title</span></dt>
+                <dd>
+                    <span>{{ serviceCategory.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceCategory.sequenceNo">Sequence No</span></dt>
+                <dd>
+                    <span>{{ serviceCategory.sequenceNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceCategory.parentCategory">Parent Category</span></dt>
+                <dd>
+                    <span>{{ serviceCategory.parentCategory }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceCategory.imagePath">Image Path</span></dt>
+                <dd>
+                    <span>{{ serviceCategory.imagePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceCategory.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceCategory.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceCategory.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceCategory.lastModifiedDate }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-category', serviceCategory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

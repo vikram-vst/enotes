@@ -1,0 +1,22 @@
+{
+  "enotesApp": {
+    "geoType": {
+      "home": {
+        "title": "GeoTypes",
+        "createLabel": "नया Geo Type बनाएँ",
+        "createOrEditLabel": "Geo Type बनाएँ या संपादित करें",
+        "notFound": "No Geo Types found"
+      },
+      "created": "एक नया Geo Type [identifier: {{ param }}] तैयार है",
+      "updated": "एक Geo Type [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Geo Type [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Geo Type [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Geo Type"
+      },
+      "name": "Name"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "enotesApp": {
+    "serviceEntry": {
+      "home": {
+        "title": "Service Entries",
+        "createLabel": "కొత్త Service Entry  సృష్టించండి",
+        "createOrEditLabel": "Service Entry సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Service Entries found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Service Entry {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Service Entry"
+      },
+      "createdDate": "Created Date",
+      "initiatedDate": "Initiated Date",
+      "lastModifiedDate": "Last Modified Date",
+      "serviceStartDate": "Service Start Date",
+      "serviceEndDate": "Service End Date",
+      "entry": "Entry",
+      "user": "User",
+      "status": "Status",
+      "serviceDefinition": "Service Definition",
+      "geoPoint": "Geo Point",
+      "address": "Address"
+    }
+  }
+}

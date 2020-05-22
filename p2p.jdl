@@ -1,0 +1,324 @@
+application {
+  config {
+    databaseType sql
+    devDatabaseType postgresql
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix sys
+    languages [en, hi, te]
+    nativeLanguage en
+    packageName com.enotes
+    prodDatabaseType postgresql
+    serviceDiscoveryType false
+    skipClient false
+    skipServer false
+    testFrameworks [gatling, cucumber, protractor]
+    websocket spring-websocket
+    applicationType monolith
+    baseName enotes
+    serverPort 8080
+    authenticationType jwt
+    cacheProvider redis
+    buildTool gradle
+    useSass true
+    clientPackageManager npm
+    clientFramework angularX
+  }
+  entities *
+}
+
+entity Person {
+  firstName String maxlength(100)
+  lastName String maxlength(100)
+  displayName String maxlength(100)
+  profilePicture ImageBlob
+  email String minlength(5) maxlength(75)
+  birthdate Instant
+  notes String maxlength(255)
+  mobileNumber String required minlength(10) maxlength(14)
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity UserPreference {
+  name String maxlength(25) 
+  description String maxlength(100)
+}
+
+entity Preference {
+  name String unique maxlength(25) 
+}
+
+entity PreferenceType {
+  name String unique maxlength(25)
+  description String maxlength(100)
+}
+
+entity Language {
+  isoLanguageCode String
+  name String maxlength(25)
+}
+
+entity Gender {
+  name String unique maxlength(10)
+}
+
+entity AddressType {
+  name String unique maxlength(25)
+}
+
+entity Address {
+  streetAddress String maxlength(60)
+  streetAddress2 String maxlength(60)
+  city String maxlength(60)
+  landmark String maxlength(60)
+  postalCode String maxlength(10)
+  note String maxlength(255)
+  isDefault Boolean
+  customAddressType String maxlength(25)
+}
+
+entity OtpAuth {
+  otp String maxlength(10)
+  otpSent Boolean
+  verificationSuccess Boolean
+  otpExpired Boolean
+  otpSentTime Instant
+  sentCounter Integer
+  failCounter Integer
+  otpResetCounter Integer
+  maxResend Integer
+  maxReset Integer
+  maxFailures Integer
+  otpActiveTime Integer
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity StatusCategory {
+  name String unique maxlength(25)
+  description String maxlength(100)
+}
+
+entity Status {
+  name String unique maxlength(25)
+  sequenceNo Integer
+  description String maxlength(100)
+  type String maxlength(25)
+}
+
+entity ServiceCategory {
+  title String unique maxlength(25)
+  sequenceNo Integer
+  parentCategory Long
+  imagePath String
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity Service {
+  title String unique maxlength(25)
+  sequenceNo Integer
+  startTime Duration
+  endTime Duration
+  startDate Instant
+  endDate Instant  
+  recurrence Integer
+  interval Duration
+  gracePeriod Duration  
+  imagePath String
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity ServiceDefinition {
+  title String maxlength(25)
+  version Integer min(1) max(100)
+  imagePath String
+  createdDate Instant
+  lastModifiedDate Instant
+  fields TextBlob
+}
+
+entity ServiceProvider {
+  fromDate Instant
+  thruDate Instant
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity ServiceFacility {
+  fromDate Instant
+  thruDate Instant
+  startTime Duration
+  endTime Duration
+  startDate Instant
+  endDate Instant  
+  recurrence Integer
+  interval Duration
+  gracePeriod Duration
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity Frequency {
+	name String unique maxlength(25)
+	description String maxlength(60)
+}
+
+entity ServiceProviderRole {
+  name String maxlength(25)
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity ServiceEntry {
+  createdDate Instant
+  initiatedDate Instant
+  lastModifiedDate Instant
+  serviceStartDate Instant
+  serviceEndDate Instant
+  entry TextBlob
+}
+
+entity ServiceEntryStatusLog {
+  createdDate Instant
+}
+
+entity ServiceEntryTimeLog {
+  createdDate Instant
+  lastModifiedDate Instant
+}
+
+entity GeoType {
+  name String unique maxlength(25)
+}
+
+entity GeoAssocType {
+  name String unique maxlength(25)
+}
+
+entity Geo {
+  name String maxlength(25)
+  code String unique maxlength(10)
+  abbreviation String maxlength(10)
+}
+
+entity GeoAssoc {
+  
+}
+
+entity GeoPoint {
+  latitude BigDecimal
+  longitude BigDecimal
+}
+
+entity ProductStore {
+  name String unique maxlength(25)
+  title String maxlength(25)
+}
+
+entity FacilityType {
+  name String unique maxlength(25)
+  description String maxlength(60)
+}
+
+entity FacilityGroupType {
+  name String unique maxlength(25)
+  description String maxlength(60)
+}
+
+entity FacilityGroup {
+  name String unique maxlength(25)
+}
+
+entity Facility {
+  name String unique maxlength(25)
+  description String unique maxlength(60)
+}
+
+entity FacilityUser {
+  name String unique maxlength(25)
+}
+
+relationship ManyToOne {
+    
+  ServiceEntry{user} to User 
+  ServiceProvider{user} to User
+  
+  Person{status(name)} to Status
+  Address{status(name)} to Status
+  ServiceDefinition{status(name)} to Status
+  ServiceEntry{status(name)} to Status
+  
+  Person{preferredLanguage(name)} to Language 
+  
+  ServiceDefinition{service(title) required} to Service
+  ServiceProvider{service(title)} to Service
+  
+  ServiceEntry{serviceDefinition required} to ServiceDefinition
+  
+  Status{category(name)} to StatusCategory
+  
+  Service{category(title)} to ServiceCategory
+ 
+  Person{gender(name)} to Gender 
+  
+  Address{state(name)} to Geo
+  Address{pincode(code)} to Geo
+  Address{country(name)} to Geo
+  Address{addressType(name)} to AddressType
+  
+  
+  Geo{geoType(name)} to GeoType
+  
+  GeoAssoc{geo(name)} to Geo
+  GeoAssoc{geoTo(name)} to Geo
+  GeoAssoc{geoAssocType(name)} to GeoAssocType
+  
+  Address{geoPoint} to GeoPoint
+  ServiceEntry{geoPoint} to GeoPoint
+  ServiceEntry{address} to Address
+  
+  Preference{preferenceType(name)} to PreferenceType 
+  UserPreference{preference(name)} to Preference 
+  UserPreference{user(login)} to User  
+  
+  Address{user(login)} to User
+  
+  ServiceEntryTimeLog{ServiceEntry} to ServiceEntry
+  
+  ServiceEntryStatusLog{modifiedBy} to User
+  
+  ServiceEntryTimeLog{modifiedBy} to User
+  
+  ServiceEntryTimeLog{createdBy} to User
+  
+  Facility{facilityType(name)} to FacilityType
+  Facility{productStore(name)} to ProductStore
+  Facility{facilityGroup(name)} to FacilityGroup
+  Facility{owner(login)} to User
+  Facility{productStore(name)} to ProductStore
+  
+  FacilityGroup{facilityGroupType(name)} to FacilityGroupType
+  
+  ProductStore{owner(login)} to User
+  
+  FacilityUser{user(login)} to User
+  FacilityUser{facility(name)} to Facility
+  
+  Service{frequency(name)} to Frequency
+  ServiceFacility{frequency(name)} to Frequency
+}
+relationship OneToOne {
+  Person{user(login)} to User
+  OtpAuth{user(login)} to User
+    
+}
+
+
+
+
+
+

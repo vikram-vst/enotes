@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "productStore": {
+      "home": {
+        "title": "Product Stores",
+        "createLabel": "కొత్త Product Store  సృష్టించండి",
+        "createOrEditLabel": "Product Store సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Product Stores found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Product Store సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Product Store సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Product Store తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Product Store {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Product Store"
+      },
+      "name": "Name",
+      "title": "Title",
+      "owner": "Owner"
+    }
+  }
+}

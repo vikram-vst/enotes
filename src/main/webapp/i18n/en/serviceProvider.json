@@ -1,0 +1,27 @@
+{
+  "enotesApp": {
+    "serviceProvider": {
+      "home": {
+        "title": "Service Providers",
+        "createLabel": "Create a new Service Provider",
+        "createOrEditLabel": "Create or edit a Service Provider",
+        "notFound": "No Service Providers found"
+      },
+      "created": "A new Service Provider is created with identifier {{ param }}",
+      "updated": "A Service Provider is updated with identifier {{ param }}",
+      "deleted": "A Service Provider is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Provider {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Provider"
+      },
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "user": "User",
+      "service": "Service"
+    }
+  }
+}

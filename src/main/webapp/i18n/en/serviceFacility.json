@@ -1,0 +1,33 @@
+{
+  "enotesApp": {
+    "serviceFacility": {
+      "home": {
+        "title": "Service Facilities",
+        "createLabel": "Create a new Service Facility",
+        "createOrEditLabel": "Create or edit a Service Facility",
+        "notFound": "No Service Facilities found"
+      },
+      "created": "A new Service Facility is created with identifier {{ param }}",
+      "updated": "A Service Facility is updated with identifier {{ param }}",
+      "deleted": "A Service Facility is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Facility {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Facility"
+      },
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "recurrence": "Recurrence",
+      "interval": "Interval",
+      "gracePeriod": "Grace Period",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "frequency": "Frequency"
+    }
+  }
+}

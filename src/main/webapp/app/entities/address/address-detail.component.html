@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="address">
+            <h2><span jhiTranslate="enotesApp.address.detail.title">Address</span> {{ address.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.address.streetAddress">Street Address</span></dt>
+                <dd>
+                    <span>{{ address.streetAddress }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.streetAddress2">Street Address 2</span></dt>
+                <dd>
+                    <span>{{ address.streetAddress2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.city">City</span></dt>
+                <dd>
+                    <span>{{ address.city }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.landmark">Landmark</span></dt>
+                <dd>
+                    <span>{{ address.landmark }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{ address.postalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.note">Note</span></dt>
+                <dd>
+                    <span>{{ address.note }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.isDefault">Is Default</span></dt>
+                <dd>
+                    <span>{{ address.isDefault }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.customAddressType">Custom Address Type</span></dt>
+                <dd>
+                    <span>{{ address.customAddressType }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="address.status">
+                        <a [routerLink]="['/status', address.status?.id, 'view']">{{ address.status?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.state">State</span></dt>
+                <dd>
+                    <div *ngIf="address.state">
+                        <a [routerLink]="['/geo', address.state?.id, 'view']">{{ address.state?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.pincode">Pincode</span></dt>
+                <dd>
+                    <div *ngIf="address.pincode">
+                        <a [routerLink]="['/geo', address.pincode?.id, 'view']">{{ address.pincode?.code }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.country">Country</span></dt>
+                <dd>
+                    <div *ngIf="address.country">
+                        <a [routerLink]="['/geo', address.country?.id, 'view']">{{ address.country?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.addressType">Address Type</span></dt>
+                <dd>
+                    <div *ngIf="address.addressType">
+                        <a [routerLink]="['/address-type', address.addressType?.id, 'view']">{{ address.addressType?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.geoPoint">Geo Point</span></dt>
+                <dd>
+                    <div *ngIf="address.geoPoint">
+                        <a [routerLink]="['/geo-point', address.geoPoint?.id, 'view']">{{ address.geoPoint?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.address.user">User</span></dt>
+                <dd>
+                    {{ address.user?.login }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/address', address.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

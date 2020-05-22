@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "language": {
+      "home": {
+        "title": "Languages",
+        "createLabel": "కొత్త Language  సృష్టించండి",
+        "createOrEditLabel": "Language సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Languages found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Language సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Language సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Language తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Language {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Language"
+      },
+      "isoLanguageCode": "Iso Language Code",
+      "name": "Name"
+    }
+  }
+}

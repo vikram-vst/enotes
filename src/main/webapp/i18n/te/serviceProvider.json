@@ -1,0 +1,27 @@
+{
+  "enotesApp": {
+    "serviceProvider": {
+      "home": {
+        "title": "Service Providers",
+        "createLabel": "కొత్త Service Provider  సృష్టించండి",
+        "createOrEditLabel": "Service Provider సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Service Providers found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Service Provider సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Service Provider సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Service Provider తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Service Provider {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Service Provider"
+      },
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "user": "User",
+      "service": "Service"
+    }
+  }
+}

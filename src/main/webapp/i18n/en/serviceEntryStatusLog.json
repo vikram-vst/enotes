@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "serviceEntryStatusLog": {
+      "home": {
+        "title": "Service Entry Status Logs",
+        "createLabel": "Create a new Service Entry Status Log",
+        "createOrEditLabel": "Create or edit a Service Entry Status Log",
+        "notFound": "No Service Entry Status Logs found"
+      },
+      "created": "A new Service Entry Status Log is created with identifier {{ param }}",
+      "updated": "A Service Entry Status Log is updated with identifier {{ param }}",
+      "deleted": "A Service Entry Status Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Entry Status Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Entry Status Log"
+      },
+      "createdDate": "Created Date",
+      "modifiedBy": "Modified By"
+    }
+  }
+}

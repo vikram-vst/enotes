@@ -1,0 +1,40 @@
+{
+    "name": "GeoAssoc",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "geo",
+            "otherEntityRelationshipName": "geoAssoc",
+            "relationshipName": "geo",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "geo",
+            "otherEntityRelationshipName": "geoAssoc",
+            "relationshipName": "geoTo",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "geoAssocType",
+            "otherEntityRelationshipName": "geoAssoc",
+            "relationshipName": "geoAssocType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200522221400",
+    "entityTableName": "geo_assoc",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

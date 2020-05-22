@@ -1,0 +1,172 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="sys-address-heading" jhiTranslate="enotesApp.address.home.createOrEditLabel">Create or edit a Address</h2>
+
+            <div>
+                <sys-alert-error></sys-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.streetAddress" for="field_streetAddress">Street Address</label>
+                    <input type="text" class="form-control" name="streetAddress" id="field_streetAddress"
+                           formControlName="streetAddress"/>
+                    <div *ngIf="editForm.get('streetAddress')!.invalid && (editForm.get('streetAddress')!.dirty || editForm.get('streetAddress')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('streetAddress')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 60 }">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.streetAddress2" for="field_streetAddress2">Street Address 2</label>
+                    <input type="text" class="form-control" name="streetAddress2" id="field_streetAddress2"
+                           formControlName="streetAddress2"/>
+                    <div *ngIf="editForm.get('streetAddress2')!.invalid && (editForm.get('streetAddress2')!.dirty || editForm.get('streetAddress2')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('streetAddress2')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 60 }">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                    <div *ngIf="editForm.get('city')!.invalid && (editForm.get('city')!.dirty || editForm.get('city')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('city')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 60 }">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.landmark" for="field_landmark">Landmark</label>
+                    <input type="text" class="form-control" name="landmark" id="field_landmark"
+                           formControlName="landmark"/>
+                    <div *ngIf="editForm.get('landmark')!.invalid && (editForm.get('landmark')!.dirty || editForm.get('landmark')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('landmark')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 60 }">
+                        This field cannot be longer than 60 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.postalCode" for="field_postalCode">Postal Code</label>
+                    <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                           formControlName="postalCode"/>
+                    <div *ngIf="editForm.get('postalCode')!.invalid && (editForm.get('postalCode')!.dirty || editForm.get('postalCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('postalCode')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.note" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                           formControlName="note"/>
+                    <div *ngIf="editForm.get('note')!.invalid && (editForm.get('note')!.dirty || editForm.get('note')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('note')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.isDefault" for="field_isDefault">Is Default</label>
+                    <input type="checkbox" class="form-control" name="isDefault" id="field_isDefault"
+                           formControlName="isDefault"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.customAddressType" for="field_customAddressType">Custom Address Type</label>
+                    <input type="text" class="form-control" name="customAddressType" id="field_customAddressType"
+                           formControlName="customAddressType"/>
+                    <div *ngIf="editForm.get('customAddressType')!.invalid && (editForm.get('customAddressType')!.dirty || editForm.get('customAddressType')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('customAddressType')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 25 }">
+                        This field cannot be longer than 25 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.status" for="field_status">Status</label>
+                    <select class="form-control" id="field_status" name="status" formControlName="status">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusOption.id === editForm.get('status')!.value?.id ? editForm.get('status')!.value : statusOption" *ngFor="let statusOption of statuses; trackBy: trackById">{{ statusOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.state" for="field_state">State</label>
+                    <select class="form-control" id="field_state" name="state" formControlName="state">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="geoOption.id === editForm.get('state')!.value?.id ? editForm.get('state')!.value : geoOption" *ngFor="let geoOption of geos; trackBy: trackById">{{ geoOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.pincode" for="field_pincode">Pincode</label>
+                    <select class="form-control" id="field_pincode" name="pincode" formControlName="pincode">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="geoOption.id === editForm.get('pincode')!.value?.id ? editForm.get('pincode')!.value : geoOption" *ngFor="let geoOption of geos; trackBy: trackById">{{ geoOption.code }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.country" for="field_country">Country</label>
+                    <select class="form-control" id="field_country" name="country" formControlName="country">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="geoOption.id === editForm.get('country')!.value?.id ? editForm.get('country')!.value : geoOption" *ngFor="let geoOption of geos; trackBy: trackById">{{ geoOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.addressType" for="field_addressType">Address Type</label>
+                    <select class="form-control" id="field_addressType" name="addressType" formControlName="addressType">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="addressTypeOption.id === editForm.get('addressType')!.value?.id ? editForm.get('addressType')!.value : addressTypeOption" *ngFor="let addressTypeOption of addresstypes; trackBy: trackById">{{ addressTypeOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.geoPoint" for="field_geoPoint">Geo Point</label>
+                    <select class="form-control" id="field_geoPoint" name="geoPoint" formControlName="geoPoint">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="geoPointOption.id === editForm.get('geoPoint')!.value?.id ? editForm.get('geoPoint')!.value : geoPointOption" *ngFor="let geoPointOption of geopoints; trackBy: trackById">{{ geoPointOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.address.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.login }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

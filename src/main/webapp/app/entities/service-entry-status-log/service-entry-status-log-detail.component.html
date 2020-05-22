@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceEntryStatusLog">
+            <h2><span jhiTranslate="enotesApp.serviceEntryStatusLog.detail.title">Service Entry Status Log</span> {{ serviceEntryStatusLog.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceEntryStatusLog.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntryStatusLog.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntryStatusLog.modifiedBy">Modified By</span></dt>
+                <dd>
+                    {{ serviceEntryStatusLog.modifiedBy?.id }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-entry-status-log', serviceEntryStatusLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

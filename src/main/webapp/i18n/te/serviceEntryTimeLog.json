@@ -1,0 +1,26 @@
+{
+  "enotesApp": {
+    "serviceEntryTimeLog": {
+      "home": {
+        "title": "Service Entry Time Logs",
+        "createLabel": "కొత్త Service Entry Time Log  సృష్టించండి",
+        "createOrEditLabel": "Service Entry Time Log సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Service Entry Time Logs found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry Time Log సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry Time Log సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Service Entry Time Log తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Service Entry Time Log {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Service Entry Time Log"
+      },
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "serviceEntry": "Service Entry",
+      "modifiedBy": "Modified By",
+      "createdBy": "Created By"
+    }
+  }
+}

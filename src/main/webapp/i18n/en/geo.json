@@ -1,0 +1,25 @@
+{
+  "enotesApp": {
+    "geo": {
+      "home": {
+        "title": "Geos",
+        "createLabel": "Create a new Geo",
+        "createOrEditLabel": "Create or edit a Geo",
+        "notFound": "No Geos found"
+      },
+      "created": "A new Geo is created with identifier {{ param }}",
+      "updated": "A Geo is updated with identifier {{ param }}",
+      "deleted": "A Geo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Geo {{ id }}?"
+      },
+      "detail": {
+        "title": "Geo"
+      },
+      "name": "Name",
+      "code": "Code",
+      "abbreviation": "Abbreviation",
+      "geoType": "Geo Type"
+    }
+  }
+}

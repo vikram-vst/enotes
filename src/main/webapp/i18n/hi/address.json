@@ -1,0 +1,36 @@
+{
+  "enotesApp": {
+    "address": {
+      "home": {
+        "title": "Addresses",
+        "createLabel": "नया Address बनाएँ",
+        "createOrEditLabel": "Address बनाएँ या संपादित करें",
+        "notFound": "No Addresses found"
+      },
+      "created": "एक नया Address [identifier: {{ param }}] तैयार है",
+      "updated": "एक Address [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Address [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Address [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "streetAddress": "Street Address",
+      "streetAddress2": "Street Address 2",
+      "city": "City",
+      "landmark": "Landmark",
+      "postalCode": "Postal Code",
+      "note": "Note",
+      "isDefault": "Is Default",
+      "customAddressType": "Custom Address Type",
+      "status": "Status",
+      "state": "State",
+      "pincode": "Pincode",
+      "country": "Country",
+      "addressType": "Address Type",
+      "geoPoint": "Geo Point",
+      "user": "User"
+    }
+  }
+}

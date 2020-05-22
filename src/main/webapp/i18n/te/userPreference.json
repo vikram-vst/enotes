@@ -1,0 +1,25 @@
+{
+  "enotesApp": {
+    "userPreference": {
+      "home": {
+        "title": "User Preferences",
+        "createLabel": "కొత్త User Preference  సృష్టించండి",
+        "createOrEditLabel": "User Preference సృష్టించండి లేదా సవరించండి",
+        "notFound": "No User Preferences found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త User Preference సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త User Preference సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త User Preference తొలగించబడినది",
+      "delete": {
+        "question": "మీరు User Preference {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "User Preference"
+      },
+      "name": "Name",
+      "description": "Description",
+      "preference": "Preference",
+      "user": "User"
+    }
+  }
+}

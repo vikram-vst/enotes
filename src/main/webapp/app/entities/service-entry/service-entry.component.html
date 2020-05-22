@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.serviceEntry.home.title">Service Entries</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-entry" [routerLink]="['/service-entry/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.serviceEntry.home.createLabel">
+            Create a new Service Entry
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="serviceEntries?.length === 0">
+        <span jhiTranslate="enotesApp.serviceEntry.home.notFound">No serviceEntries found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="serviceEntries?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.createdDate">Created Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.initiatedDate">Initiated Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.lastModifiedDate">Last Modified Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.serviceStartDate">Service Start Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.serviceEndDate">Service End Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.entry">Entry</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.user">User</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.serviceDefinition">Service Definition</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.geoPoint">Geo Point</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.serviceEntry.address">Address</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let serviceEntry of serviceEntries ;trackBy: trackId">
+                    <td><a [routerLink]="['/service-entry', serviceEntry.id, 'view']">{{ serviceEntry.id }}</a></td>
+                    <td>{{ serviceEntry.createdDate | date:'medium' }}</td>
+                    <td>{{ serviceEntry.initiatedDate | date:'medium' }}</td>
+                    <td>{{ serviceEntry.lastModifiedDate | date:'medium' }}</td>
+                    <td>{{ serviceEntry.serviceStartDate | date:'medium' }}</td>
+                    <td>{{ serviceEntry.serviceEndDate | date:'medium' }}</td>
+                    <td>{{ serviceEntry.entry }}</td>
+                    <td>
+                        {{ serviceEntry.user?.id }}
+                    </td>
+                    <td>
+                        <div *ngIf="serviceEntry.status">
+                            <a [routerLink]="['/status', serviceEntry.status?.id, 'view']" >{{ serviceEntry.status?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="serviceEntry.serviceDefinition">
+                            <a [routerLink]="['/service-definition', serviceEntry.serviceDefinition?.id, 'view']" >{{ serviceEntry.serviceDefinition?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="serviceEntry.geoPoint">
+                            <a [routerLink]="['/geo-point', serviceEntry.geoPoint?.id, 'view']" >{{ serviceEntry.geoPoint?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="serviceEntry.address">
+                            <a [routerLink]="['/address', serviceEntry.address?.id, 'view']" >{{ serviceEntry.address?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/service-entry', serviceEntry.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/service-entry', serviceEntry.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(serviceEntry)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

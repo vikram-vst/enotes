@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="preferenceType">
+            <h2><span jhiTranslate="enotesApp.preferenceType.detail.title">Preference Type</span> {{ preferenceType.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.preferenceType.name">Name</span></dt>
+                <dd>
+                    <span>{{ preferenceType.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.preferenceType.description">Description</span></dt>
+                <dd>
+                    <span>{{ preferenceType.description }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/preference-type', preferenceType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.facilityType.home.title">Facility Types</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-facility-type" [routerLink]="['/facility-type/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.facilityType.home.createLabel">
+            Create a new Facility Type
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="facilityTypes?.length === 0">
+        <span jhiTranslate="enotesApp.facilityType.home.notFound">No facilityTypes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="facilityTypes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facilityType.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.facilityType.description">Description</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let facilityType of facilityTypes ;trackBy: trackId">
+                    <td><a [routerLink]="['/facility-type', facilityType.id, 'view']">{{ facilityType.id }}</a></td>
+                    <td>{{ facilityType.name }}</td>
+                    <td>{{ facilityType.description }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/facility-type', facilityType.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/facility-type', facilityType.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(facilityType)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

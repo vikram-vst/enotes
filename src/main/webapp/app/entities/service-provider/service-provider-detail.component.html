@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceProvider">
+            <h2><span jhiTranslate="enotesApp.serviceProvider.detail.title">Service Provider</span> {{ serviceProvider.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceProvider.fromDate">From Date</span></dt>
+                <dd>
+                    <span>{{ serviceProvider.fromDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProvider.thruDate">Thru Date</span></dt>
+                <dd>
+                    <span>{{ serviceProvider.thruDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProvider.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceProvider.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProvider.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceProvider.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProvider.user">User</span></dt>
+                <dd>
+                    {{ serviceProvider.user?.id }}
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceProvider.service">Service</span></dt>
+                <dd>
+                    <div *ngIf="serviceProvider.service">
+                        <a [routerLink]="['/service', serviceProvider.service?.id, 'view']">{{ serviceProvider.service?.title }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-provider', serviceProvider.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

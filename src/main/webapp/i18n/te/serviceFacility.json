@@ -1,0 +1,33 @@
+{
+  "enotesApp": {
+    "serviceFacility": {
+      "home": {
+        "title": "Service Facilities",
+        "createLabel": "కొత్త Service Facility  సృష్టించండి",
+        "createOrEditLabel": "Service Facility సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Service Facilities found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Service Facility సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Service Facility సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Service Facility తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Service Facility {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Service Facility"
+      },
+      "fromDate": "From Date",
+      "thruDate": "Thru Date",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "recurrence": "Recurrence",
+      "interval": "Interval",
+      "gracePeriod": "Grace Period",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "frequency": "Frequency"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "enotesApp": {
+    "serviceProviderRole": {
+      "home": {
+        "title": "Service Provider Roles",
+        "createLabel": "Create a new Service Provider Role",
+        "createOrEditLabel": "Create or edit a Service Provider Role",
+        "notFound": "No Service Provider Roles found"
+      },
+      "created": "A new Service Provider Role is created with identifier {{ param }}",
+      "updated": "A Service Provider Role is updated with identifier {{ param }}",
+      "deleted": "A Service Provider Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Provider Role {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Provider Role"
+      },
+      "name": "Name",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

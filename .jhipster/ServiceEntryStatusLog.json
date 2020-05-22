@@ -1,0 +1,31 @@
+{
+    "name": "ServiceEntryStatusLog",
+    "fields": [
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "serviceEntryStatusLog",
+            "relationshipName": "modifiedBy",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200522220900",
+    "entityTableName": "service_entry_status_log",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

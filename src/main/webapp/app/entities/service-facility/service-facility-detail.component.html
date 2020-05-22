@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceFacility">
+            <h2><span jhiTranslate="enotesApp.serviceFacility.detail.title">Service Facility</span> {{ serviceFacility.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceFacility.fromDate">From Date</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.fromDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.thruDate">Thru Date</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.thruDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.startTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.endTime">End Time</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.endTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.recurrence">Recurrence</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.recurrence }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.interval">Interval</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.interval }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.gracePeriod">Grace Period</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.gracePeriod }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceFacility.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceFacility.frequency">Frequency</span></dt>
+                <dd>
+                    <div *ngIf="serviceFacility.frequency">
+                        <a [routerLink]="['/frequency', serviceFacility.frequency?.id, 'view']">{{ serviceFacility.frequency?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-facility', serviceFacility.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

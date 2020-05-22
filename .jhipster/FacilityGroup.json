@@ -1,0 +1,36 @@
+{
+    "name": "FacilityGroup",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "25"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "facilityGroupType",
+            "otherEntityRelationshipName": "facilityGroup",
+            "relationshipName": "facilityGroupType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200522221900",
+    "entityTableName": "facility_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

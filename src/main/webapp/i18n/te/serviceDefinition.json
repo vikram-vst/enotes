@@ -1,0 +1,29 @@
+{
+  "enotesApp": {
+    "serviceDefinition": {
+      "home": {
+        "title": "Service Definitions",
+        "createLabel": "కొత్త Service Definition  సృష్టించండి",
+        "createOrEditLabel": "Service Definition సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Service Definitions found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Service Definition సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Service Definition సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Service Definition తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Service Definition {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Service Definition"
+      },
+      "title": "Title",
+      "version": "Version",
+      "imagePath": "Image Path",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "fields": "Fields",
+      "status": "Status",
+      "service": "Service"
+    }
+  }
+}

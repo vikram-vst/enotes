@@ -1,0 +1,22 @@
+{
+  "enotesApp": {
+    "geoType": {
+      "home": {
+        "title": "Geo Types",
+        "createLabel": "Create a new Geo Type",
+        "createOrEditLabel": "Create or edit a Geo Type",
+        "notFound": "No Geo Types found"
+      },
+      "created": "A new Geo Type is created with identifier {{ param }}",
+      "updated": "A Geo Type is updated with identifier {{ param }}",
+      "deleted": "A Geo Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Geo Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Geo Type"
+      },
+      "name": "Name"
+    }
+  }
+}

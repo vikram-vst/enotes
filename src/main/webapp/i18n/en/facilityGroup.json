@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "facilityGroup": {
+      "home": {
+        "title": "Facility Groups",
+        "createLabel": "Create a new Facility Group",
+        "createOrEditLabel": "Create or edit a Facility Group",
+        "notFound": "No Facility Groups found"
+      },
+      "created": "A new Facility Group is created with identifier {{ param }}",
+      "updated": "A Facility Group is updated with identifier {{ param }}",
+      "deleted": "A Facility Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facility Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Facility Group"
+      },
+      "name": "Name",
+      "facilityGroupType": "Facility Group Type"
+    }
+  }
+}

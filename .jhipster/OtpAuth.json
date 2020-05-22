@@ -1,0 +1,88 @@
+{
+    "name": "OtpAuth",
+    "fields": [
+        {
+            "fieldName": "otp",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "10"
+        },
+        {
+            "fieldName": "otpSent",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "verificationSuccess",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "otpExpired",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "otpSentTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "sentCounter",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "failCounter",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "otpResetCounter",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxResend",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxReset",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxFailures",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "otpActiveTime",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "otpAuth",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200522215800",
+    "entityTableName": "otp_auth",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

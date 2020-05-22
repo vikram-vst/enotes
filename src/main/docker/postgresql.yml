@@ -1,0 +1,11 @@
+version: '2'
+services:
+  enotes-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/enotes/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=enotes
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

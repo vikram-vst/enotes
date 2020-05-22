@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.otpAuth.home.title">Otp Auths</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-otp-auth" [routerLink]="['/otp-auth/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.otpAuth.home.createLabel">
+            Create a new Otp Auth
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="otpAuths?.length === 0">
+        <span jhiTranslate="enotesApp.otpAuth.home.notFound">No otpAuths found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="otpAuths?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.otp">Otp</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.otpSent">Otp Sent</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.verificationSuccess">Verification Success</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.otpExpired">Otp Expired</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.otpSentTime">Otp Sent Time</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.sentCounter">Sent Counter</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.failCounter">Fail Counter</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.otpResetCounter">Otp Reset Counter</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.maxResend">Max Resend</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.maxReset">Max Reset</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.maxFailures">Max Failures</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.otpActiveTime">Otp Active Time</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.createdDate">Created Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.lastModifiedDate">Last Modified Date</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.otpAuth.user">User</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let otpAuth of otpAuths ;trackBy: trackId">
+                    <td><a [routerLink]="['/otp-auth', otpAuth.id, 'view']">{{ otpAuth.id }}</a></td>
+                    <td>{{ otpAuth.otp }}</td>
+                    <td>{{ otpAuth.otpSent }}</td>
+                    <td>{{ otpAuth.verificationSuccess }}</td>
+                    <td>{{ otpAuth.otpExpired }}</td>
+                    <td>{{ otpAuth.otpSentTime | date:'medium' }}</td>
+                    <td>{{ otpAuth.sentCounter }}</td>
+                    <td>{{ otpAuth.failCounter }}</td>
+                    <td>{{ otpAuth.otpResetCounter }}</td>
+                    <td>{{ otpAuth.maxResend }}</td>
+                    <td>{{ otpAuth.maxReset }}</td>
+                    <td>{{ otpAuth.maxFailures }}</td>
+                    <td>{{ otpAuth.otpActiveTime }}</td>
+                    <td>{{ otpAuth.createdDate | date:'medium' }}</td>
+                    <td>{{ otpAuth.lastModifiedDate | date:'medium' }}</td>
+                    <td>
+                        {{ otpAuth.user?.login }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/otp-auth', otpAuth.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/otp-auth', otpAuth.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(otpAuth)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

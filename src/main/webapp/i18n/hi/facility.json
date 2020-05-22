@@ -1,0 +1,27 @@
+{
+  "enotesApp": {
+    "facility": {
+      "home": {
+        "title": "Facilities",
+        "createLabel": "नया Facility बनाएँ",
+        "createOrEditLabel": "Facility बनाएँ या संपादित करें",
+        "notFound": "No Facilities found"
+      },
+      "created": "एक नया Facility [identifier: {{ param }}] तैयार है",
+      "updated": "एक Facility [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Facility [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Facility [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Facility"
+      },
+      "name": "Name",
+      "description": "Description",
+      "facilityType": "Facility Type",
+      "productStore": "Product Store",
+      "facilityGroup": "Facility Group",
+      "owner": "Owner"
+    }
+  }
+}

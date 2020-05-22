@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "facilityType": {
+      "home": {
+        "title": "Facility Types",
+        "createLabel": "కొత్త Facility Type  సృష్టించండి",
+        "createOrEditLabel": "Facility Type సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Facility Types found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Facility Type సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Facility Type సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Facility Type తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Facility Type {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Facility Type"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

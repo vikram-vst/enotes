@@ -1,0 +1,32 @@
+{
+  "enotesApp": {
+    "serviceEntry": {
+      "home": {
+        "title": "ServiceEntries",
+        "createLabel": "नया Service Entry बनाएँ",
+        "createOrEditLabel": "Service Entry बनाएँ या संपादित करें",
+        "notFound": "No Service Entries found"
+      },
+      "created": "एक नया Service Entry [identifier: {{ param }}] तैयार है",
+      "updated": "एक Service Entry [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Service Entry [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Service Entry [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Service Entry"
+      },
+      "createdDate": "Created Date",
+      "initiatedDate": "Initiated Date",
+      "lastModifiedDate": "Last Modified Date",
+      "serviceStartDate": "Service Start Date",
+      "serviceEndDate": "Service End Date",
+      "entry": "Entry",
+      "user": "User",
+      "status": "Status",
+      "serviceDefinition": "Service Definition",
+      "geoPoint": "Geo Point",
+      "address": "Address"
+    }
+  }
+}

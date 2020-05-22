@@ -1,0 +1,29 @@
+{
+  "enotesApp": {
+    "serviceDefinition": {
+      "home": {
+        "title": "ServiceDefinitions",
+        "createLabel": "नया Service Definition बनाएँ",
+        "createOrEditLabel": "Service Definition बनाएँ या संपादित करें",
+        "notFound": "No Service Definitions found"
+      },
+      "created": "एक नया Service Definition [identifier: {{ param }}] तैयार है",
+      "updated": "एक Service Definition [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Service Definition [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Service Definition [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Service Definition"
+      },
+      "title": "Title",
+      "version": "Version",
+      "imagePath": "Image Path",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "fields": "Fields",
+      "status": "Status",
+      "service": "Service"
+    }
+  }
+}

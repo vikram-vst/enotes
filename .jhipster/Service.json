@@ -1,0 +1,87 @@
+{
+    "name": "Service",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "25"
+        },
+        {
+            "fieldName": "sequenceNo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "recurrence",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "interval",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "gracePeriod",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "imagePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "serviceCategory",
+            "otherEntityRelationshipName": "service",
+            "relationshipName": "category",
+            "otherEntityField": "title"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "frequency",
+            "otherEntityRelationshipName": "service",
+            "relationshipName": "frequency",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200522220200",
+    "entityTableName": "service",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "enotes"
+    ]
+}

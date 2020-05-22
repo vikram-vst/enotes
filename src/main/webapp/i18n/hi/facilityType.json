@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "facilityType": {
+      "home": {
+        "title": "FacilityTypes",
+        "createLabel": "नया Facility Type बनाएँ",
+        "createOrEditLabel": "Facility Type बनाएँ या संपादित करें",
+        "notFound": "No Facility Types found"
+      },
+      "created": "एक नया Facility Type [identifier: {{ param }}] तैयार है",
+      "updated": "एक Facility Type [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Facility Type [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Facility Type [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Facility Type"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

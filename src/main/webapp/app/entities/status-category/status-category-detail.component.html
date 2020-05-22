@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="statusCategory">
+            <h2><span jhiTranslate="enotesApp.statusCategory.detail.title">Status Category</span> {{ statusCategory.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.statusCategory.name">Name</span></dt>
+                <dd>
+                    <span>{{ statusCategory.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.statusCategory.description">Description</span></dt>
+                <dd>
+                    <span>{{ statusCategory.description }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/status-category', statusCategory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

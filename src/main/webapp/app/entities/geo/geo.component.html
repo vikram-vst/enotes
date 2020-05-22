@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.geo.home.title">Geos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-geo" [routerLink]="['/geo/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.geo.home.createLabel">
+            Create a new Geo
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="geos?.length === 0">
+        <span jhiTranslate="enotesApp.geo.home.notFound">No geos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="geos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.geo.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.geo.code">Code</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.geo.abbreviation">Abbreviation</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.geo.geoType">Geo Type</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let geo of geos ;trackBy: trackId">
+                    <td><a [routerLink]="['/geo', geo.id, 'view']">{{ geo.id }}</a></td>
+                    <td>{{ geo.name }}</td>
+                    <td>{{ geo.code }}</td>
+                    <td>{{ geo.abbreviation }}</td>
+                    <td>
+                        <div *ngIf="geo.geoType">
+                            <a [routerLink]="['/geo-type', geo.geoType?.id, 'view']" >{{ geo.geoType?.name }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/geo', geo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/geo', geo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(geo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

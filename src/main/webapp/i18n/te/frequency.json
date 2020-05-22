@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "frequency": {
+      "home": {
+        "title": "Frequencies",
+        "createLabel": "కొత్త Frequency  సృష్టించండి",
+        "createOrEditLabel": "Frequency సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Frequencies found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Frequency సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Frequency సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Frequency తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Frequency {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Frequency"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

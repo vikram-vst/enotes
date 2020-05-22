@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="facility">
+            <h2><span jhiTranslate="enotesApp.facility.detail.title">Facility</span> {{ facility.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.facility.name">Name</span></dt>
+                <dd>
+                    <span>{{ facility.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facility.description">Description</span></dt>
+                <dd>
+                    <span>{{ facility.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facility.facilityType">Facility Type</span></dt>
+                <dd>
+                    <div *ngIf="facility.facilityType">
+                        <a [routerLink]="['/facility-type', facility.facilityType?.id, 'view']">{{ facility.facilityType?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facility.productStore">Product Store</span></dt>
+                <dd>
+                    <div *ngIf="facility.productStore">
+                        <a [routerLink]="['/product-store', facility.productStore?.id, 'view']">{{ facility.productStore?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facility.facilityGroup">Facility Group</span></dt>
+                <dd>
+                    <div *ngIf="facility.facilityGroup">
+                        <a [routerLink]="['/facility-group', facility.facilityGroup?.id, 'view']">{{ facility.facilityGroup?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.facility.owner">Owner</span></dt>
+                <dd>
+                    {{ facility.owner?.login }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/facility', facility.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

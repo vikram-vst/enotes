@@ -1,0 +1,23 @@
+{
+  "enotesApp": {
+    "preferenceType": {
+      "home": {
+        "title": "Preference Types",
+        "createLabel": "Create a new Preference Type",
+        "createOrEditLabel": "Create or edit a Preference Type",
+        "notFound": "No Preference Types found"
+      },
+      "created": "A new Preference Type is created with identifier {{ param }}",
+      "updated": "A Preference Type is updated with identifier {{ param }}",
+      "deleted": "A Preference Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Preference Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Preference Type"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

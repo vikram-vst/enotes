@@ -1,0 +1,26 @@
+{
+  "enotesApp": {
+    "serviceEntryTimeLog": {
+      "home": {
+        "title": "Service Entry Time Logs",
+        "createLabel": "Create a new Service Entry Time Log",
+        "createOrEditLabel": "Create or edit a Service Entry Time Log",
+        "notFound": "No Service Entry Time Logs found"
+      },
+      "created": "A new Service Entry Time Log is created with identifier {{ param }}",
+      "updated": "A Service Entry Time Log is updated with identifier {{ param }}",
+      "deleted": "A Service Entry Time Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Entry Time Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Entry Time Log"
+      },
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "serviceEntry": "Service Entry",
+      "modifiedBy": "Modified By",
+      "createdBy": "Created By"
+    }
+  }
+}

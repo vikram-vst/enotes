@@ -1,0 +1,113 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="sys-service-entry-heading" jhiTranslate="enotesApp.serviceEntry.home.createOrEditLabel">Create or edit a Service Entry</h2>
+
+            <div>
+                <sys-alert-error></sys-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" formControlName="createdDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.initiatedDate" for="field_initiatedDate">Initiated Date</label>
+                    <div class="d-flex">
+                        <input id="field_initiatedDate" type="datetime-local" class="form-control" name="initiatedDate" formControlName="initiatedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.lastModifiedDate" for="field_lastModifiedDate">Last Modified Date</label>
+                    <div class="d-flex">
+                        <input id="field_lastModifiedDate" type="datetime-local" class="form-control" name="lastModifiedDate" formControlName="lastModifiedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.serviceStartDate" for="field_serviceStartDate">Service Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_serviceStartDate" type="datetime-local" class="form-control" name="serviceStartDate" formControlName="serviceStartDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.serviceEndDate" for="field_serviceEndDate">Service End Date</label>
+                    <div class="d-flex">
+                        <input id="field_serviceEndDate" type="datetime-local" class="form-control" name="serviceEndDate" formControlName="serviceEndDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.entry" for="field_entry">Entry</label>
+                    <textarea class="form-control" name="entry" id="field_entry"
+                              formControlName="entry"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.status" for="field_status">Status</label>
+                    <select class="form-control" id="field_status" name="status" formControlName="status">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusOption.id === editForm.get('status')!.value?.id ? editForm.get('status')!.value : statusOption" *ngFor="let statusOption of statuses; trackBy: trackById">{{ statusOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.serviceDefinition" for="field_serviceDefinition">Service Definition</label>
+                    <select class="form-control" id="field_serviceDefinition" name="serviceDefinition" formControlName="serviceDefinition">
+                        <option *ngIf="!editForm.get('serviceDefinition')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="serviceDefinitionOption.id === editForm.get('serviceDefinition')!.value?.id ? editForm.get('serviceDefinition')!.value : serviceDefinitionOption" *ngFor="let serviceDefinitionOption of servicedefinitions; trackBy: trackById">{{ serviceDefinitionOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('serviceDefinition')!.invalid && (editForm.get('serviceDefinition')!.dirty || editForm.get('serviceDefinition')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('serviceDefinition')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.geoPoint" for="field_geoPoint">Geo Point</label>
+                    <select class="form-control" id="field_geoPoint" name="geoPoint" formControlName="geoPoint">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="geoPointOption.id === editForm.get('geoPoint')!.value?.id ? editForm.get('geoPoint')!.value : geoPointOption" *ngFor="let geoPointOption of geopoints; trackBy: trackById">{{ geoPointOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.serviceEntry.address" for="field_address">Address</label>
+                    <select class="form-control" id="field_address" name="address" formControlName="address">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="addressOption.id === editForm.get('address')!.value?.id ? editForm.get('address')!.value : addressOption" *ngFor="let addressOption of addresses; trackBy: trackById">{{ addressOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

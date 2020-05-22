@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceEntry">
+            <h2><span jhiTranslate="enotesApp.serviceEntry.detail.title">Service Entry</span> {{ serviceEntry.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.serviceEntry.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntry.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.initiatedDate">Initiated Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntry.initiatedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntry.lastModifiedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.serviceStartDate">Service Start Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntry.serviceStartDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.serviceEndDate">Service End Date</span></dt>
+                <dd>
+                    <span>{{ serviceEntry.serviceEndDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.entry">Entry</span></dt>
+                <dd>
+                    <span>{{ serviceEntry.entry }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.user">User</span></dt>
+                <dd>
+                    {{ serviceEntry.user?.id }}
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="serviceEntry.status">
+                        <a [routerLink]="['/status', serviceEntry.status?.id, 'view']">{{ serviceEntry.status?.name }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.serviceDefinition">Service Definition</span></dt>
+                <dd>
+                    <div *ngIf="serviceEntry.serviceDefinition">
+                        <a [routerLink]="['/service-definition', serviceEntry.serviceDefinition?.id, 'view']">{{ serviceEntry.serviceDefinition?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.geoPoint">Geo Point</span></dt>
+                <dd>
+                    <div *ngIf="serviceEntry.geoPoint">
+                        <a [routerLink]="['/geo-point', serviceEntry.geoPoint?.id, 'view']">{{ serviceEntry.geoPoint?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.serviceEntry.address">Address</span></dt>
+                <dd>
+                    <div *ngIf="serviceEntry.address">
+                        <a [routerLink]="['/address', serviceEntry.address?.id, 'view']">{{ serviceEntry.address?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-entry', serviceEntry.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

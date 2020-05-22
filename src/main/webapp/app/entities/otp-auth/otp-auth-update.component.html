@@ -1,0 +1,127 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="sys-otp-auth-heading" jhiTranslate="enotesApp.otpAuth.home.createOrEditLabel">Create or edit a Otp Auth</h2>
+
+            <div>
+                <sys-alert-error></sys-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.otp" for="field_otp">Otp</label>
+                    <input type="text" class="form-control" name="otp" id="field_otp"
+                           formControlName="otp"/>
+                    <div *ngIf="editForm.get('otp')!.invalid && (editForm.get('otp')!.dirty || editForm.get('otp')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('otp')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.otpSent" for="field_otpSent">Otp Sent</label>
+                    <input type="checkbox" class="form-control" name="otpSent" id="field_otpSent"
+                           formControlName="otpSent"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.verificationSuccess" for="field_verificationSuccess">Verification Success</label>
+                    <input type="checkbox" class="form-control" name="verificationSuccess" id="field_verificationSuccess"
+                           formControlName="verificationSuccess"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.otpExpired" for="field_otpExpired">Otp Expired</label>
+                    <input type="checkbox" class="form-control" name="otpExpired" id="field_otpExpired"
+                           formControlName="otpExpired"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.otpSentTime" for="field_otpSentTime">Otp Sent Time</label>
+                    <div class="d-flex">
+                        <input id="field_otpSentTime" type="datetime-local" class="form-control" name="otpSentTime" formControlName="otpSentTime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.sentCounter" for="field_sentCounter">Sent Counter</label>
+                    <input type="number" class="form-control" name="sentCounter" id="field_sentCounter"
+                           formControlName="sentCounter"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.failCounter" for="field_failCounter">Fail Counter</label>
+                    <input type="number" class="form-control" name="failCounter" id="field_failCounter"
+                           formControlName="failCounter"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.otpResetCounter" for="field_otpResetCounter">Otp Reset Counter</label>
+                    <input type="number" class="form-control" name="otpResetCounter" id="field_otpResetCounter"
+                           formControlName="otpResetCounter"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.maxResend" for="field_maxResend">Max Resend</label>
+                    <input type="number" class="form-control" name="maxResend" id="field_maxResend"
+                           formControlName="maxResend"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.maxReset" for="field_maxReset">Max Reset</label>
+                    <input type="number" class="form-control" name="maxReset" id="field_maxReset"
+                           formControlName="maxReset"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.maxFailures" for="field_maxFailures">Max Failures</label>
+                    <input type="number" class="form-control" name="maxFailures" id="field_maxFailures"
+                           formControlName="maxFailures"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.otpActiveTime" for="field_otpActiveTime">Otp Active Time</label>
+                    <input type="number" class="form-control" name="otpActiveTime" id="field_otpActiveTime"
+                           formControlName="otpActiveTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" formControlName="createdDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.lastModifiedDate" for="field_lastModifiedDate">Last Modified Date</label>
+                    <div class="d-flex">
+                        <input id="field_lastModifiedDate" type="datetime-local" class="form-control" name="lastModifiedDate" formControlName="lastModifiedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="enotesApp.otpAuth.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.login }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

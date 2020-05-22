@@ -1,0 +1,22 @@
+{
+  "enotesApp": {
+    "geoAssocType": {
+      "home": {
+        "title": "Geo Assoc Types",
+        "createLabel": "Create a new Geo Assoc Type",
+        "createOrEditLabel": "Create or edit a Geo Assoc Type",
+        "notFound": "No Geo Assoc Types found"
+      },
+      "created": "A new Geo Assoc Type is created with identifier {{ param }}",
+      "updated": "A Geo Assoc Type is updated with identifier {{ param }}",
+      "deleted": "A Geo Assoc Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Geo Assoc Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Geo Assoc Type"
+      },
+      "name": "Name"
+    }
+  }
+}

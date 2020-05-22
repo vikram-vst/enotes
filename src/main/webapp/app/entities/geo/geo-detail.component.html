@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="geo">
+            <h2><span jhiTranslate="enotesApp.geo.detail.title">Geo</span> {{ geo.id }}</h2>
+
+            <hr>
+
+            <sys-alert-error></sys-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="enotesApp.geo.name">Name</span></dt>
+                <dd>
+                    <span>{{ geo.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.geo.code">Code</span></dt>
+                <dd>
+                    <span>{{ geo.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.geo.abbreviation">Abbreviation</span></dt>
+                <dd>
+                    <span>{{ geo.abbreviation }}</span>
+                </dd>
+                <dt><span jhiTranslate="enotesApp.geo.geoType">Geo Type</span></dt>
+                <dd>
+                    <div *ngIf="geo.geoType">
+                        <a [routerLink]="['/geo-type', geo.geoType?.id, 'view']">{{ geo.geoType?.name }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/geo', geo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

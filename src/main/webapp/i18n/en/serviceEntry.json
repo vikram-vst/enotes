@@ -1,0 +1,32 @@
+{
+  "enotesApp": {
+    "serviceEntry": {
+      "home": {
+        "title": "Service Entries",
+        "createLabel": "Create a new Service Entry",
+        "createOrEditLabel": "Create or edit a Service Entry",
+        "notFound": "No Service Entries found"
+      },
+      "created": "A new Service Entry is created with identifier {{ param }}",
+      "updated": "A Service Entry is updated with identifier {{ param }}",
+      "deleted": "A Service Entry is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Entry"
+      },
+      "createdDate": "Created Date",
+      "initiatedDate": "Initiated Date",
+      "lastModifiedDate": "Last Modified Date",
+      "serviceStartDate": "Service Start Date",
+      "serviceEndDate": "Service End Date",
+      "entry": "Entry",
+      "user": "User",
+      "status": "Status",
+      "serviceDefinition": "Service Definition",
+      "geoPoint": "Geo Point",
+      "address": "Address"
+    }
+  }
+}

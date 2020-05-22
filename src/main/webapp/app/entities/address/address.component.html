@@ -1,0 +1,115 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="enotesApp.address.home.title">Addresses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-address" [routerLink]="['/address/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="enotesApp.address.home.createLabel">
+            Create a new Address
+            </span>
+        </button>
+    </h2>
+
+    <sys-alert-error></sys-alert-error>
+
+    <sys-alert></sys-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="addresses?.length === 0">
+        <span jhiTranslate="enotesApp.address.home.notFound">No addresses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="addresses?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.streetAddress">Street Address</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.streetAddress2">Street Address 2</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.city">City</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.landmark">Landmark</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.postalCode">Postal Code</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.note">Note</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.isDefault">Is Default</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.customAddressType">Custom Address Type</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.state">State</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.pincode">Pincode</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.addressType">Address Type</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.geoPoint">Geo Point</span></th>
+                    <th scope="col" ><span jhiTranslate="enotesApp.address.user">User</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let address of addresses ;trackBy: trackId">
+                    <td><a [routerLink]="['/address', address.id, 'view']">{{ address.id }}</a></td>
+                    <td>{{ address.streetAddress }}</td>
+                    <td>{{ address.streetAddress2 }}</td>
+                    <td>{{ address.city }}</td>
+                    <td>{{ address.landmark }}</td>
+                    <td>{{ address.postalCode }}</td>
+                    <td>{{ address.note }}</td>
+                    <td>{{ address.isDefault }}</td>
+                    <td>{{ address.customAddressType }}</td>
+                    <td>
+                        <div *ngIf="address.status">
+                            <a [routerLink]="['/status', address.status?.id, 'view']" >{{ address.status?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="address.state">
+                            <a [routerLink]="['/geo', address.state?.id, 'view']" >{{ address.state?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="address.pincode">
+                            <a [routerLink]="['/geo', address.pincode?.id, 'view']" >{{ address.pincode?.code }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="address.country">
+                            <a [routerLink]="['/geo', address.country?.id, 'view']" >{{ address.country?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="address.addressType">
+                            <a [routerLink]="['/address-type', address.addressType?.id, 'view']" >{{ address.addressType?.name }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="address.geoPoint">
+                            <a [routerLink]="['/geo-point', address.geoPoint?.id, 'view']" >{{ address.geoPoint?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        {{ address.user?.login }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/address', address.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/address', address.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(address)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

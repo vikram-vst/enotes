@@ -1,0 +1,36 @@
+{
+  "enotesApp": {
+    "otpAuth": {
+      "home": {
+        "title": "OtpAuths",
+        "createLabel": "नया Otp Auth बनाएँ",
+        "createOrEditLabel": "Otp Auth बनाएँ या संपादित करें",
+        "notFound": "No Otp Auths found"
+      },
+      "created": "एक नया Otp Auth [identifier: {{ param }}] तैयार है",
+      "updated": "एक Otp Auth [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Otp Auth [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Otp Auth [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Otp Auth"
+      },
+      "otp": "Otp",
+      "otpSent": "Otp Sent",
+      "verificationSuccess": "Verification Success",
+      "otpExpired": "Otp Expired",
+      "otpSentTime": "Otp Sent Time",
+      "sentCounter": "Sent Counter",
+      "failCounter": "Fail Counter",
+      "otpResetCounter": "Otp Reset Counter",
+      "maxResend": "Max Resend",
+      "maxReset": "Max Reset",
+      "maxFailures": "Max Failures",
+      "otpActiveTime": "Otp Active Time",
+      "createdDate": "Created Date",
+      "lastModifiedDate": "Last Modified Date",
+      "user": "User"
+    }
+  }
+}

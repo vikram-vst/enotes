@@ -1,0 +1,22 @@
+{
+  "enotesApp": {
+    "geoAssocType": {
+      "home": {
+        "title": "Geo Assoc Types",
+        "createLabel": "కొత్త Geo Assoc Type  సృష్టించండి",
+        "createOrEditLabel": "Geo Assoc Type సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Geo Assoc Types found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Geo Assoc Type సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Geo Assoc Type సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Geo Assoc Type తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Geo Assoc Type {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Geo Assoc Type"
+      },
+      "name": "Name"
+    }
+  }
+}
