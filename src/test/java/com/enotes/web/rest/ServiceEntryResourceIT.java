@@ -1,6 +1,5 @@
 package com.enotes.web.rest;
 
-import com.enotes.RedisTestContainerExtension;
 import com.enotes.EnotesApp;
 import com.enotes.domain.ServiceEntry;
 import com.enotes.domain.ServiceDefinition;
@@ -8,9 +7,6 @@ import com.enotes.repository.ServiceEntryRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link ServiceEntryResource} REST controller.
  */
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith({ RedisTestContainerExtension.class, MockitoExtension.class })
+
 @AutoConfigureMockMvc
 @WithMockUser
 public class ServiceEntryResourceIT {

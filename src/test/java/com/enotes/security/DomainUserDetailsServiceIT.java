@@ -1,6 +1,5 @@
 package com.enotes.security;
 
-import com.enotes.RedisTestContainerExtension;
 import com.enotes.EnotesApp;
 import com.enotes.domain.User;
 import com.enotes.repository.UserRepository;
@@ -8,7 +7,6 @@ import com.enotes.repository.UserRepository;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +22,6 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
  * Integrations tests for {@link DomainUserDetailsService}.
  */
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith(RedisTestContainerExtension.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
 

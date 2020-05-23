@@ -19,7 +19,7 @@ application {
     baseName enotes
     serverPort 8080
     authenticationType jwt
-    cacheProvider redis
+    cacheProvider hazelcast
     buildTool gradle
     useSass true
     clientPackageManager npm

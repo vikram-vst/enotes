@@ -55,7 +55,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20200522220500",
+    "changelogDate": "20200523061000",
     "entityTableName": "service_facility",
     "dto": "no",
     "pagination": "no",

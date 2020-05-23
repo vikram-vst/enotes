@@ -1,96 +1,118 @@
 package com.enotes.config;
 
+import io.github.jhipster.config.JHipsterConstants;
+import io.github.jhipster.config.JHipsterProperties;
+
+import com.hazelcast.config.*;
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.core.Hazelcast;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.*;
-import org.redisson.Redisson;
-import org.redisson.config.Config;
-import org.redisson.jcache.configuration.RedissonConfiguration;
-import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
-import org.hibernate.cache.jcache.ConfigSettings;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.Profiles;
 
-import java.util.concurrent.TimeUnit;
-
-import javax.cache.configuration.MutableConfiguration;
-import javax.cache.expiry.CreatedExpiryPolicy;
-import javax.cache.expiry.Duration;
-
-import io.github.jhipster.config.JHipsterProperties;
+import javax.annotation.PreDestroy;
 
 @Configuration
 @EnableCaching
 public class CacheConfiguration {
 
+    private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
+
+    private final Environment env;
+
+    public CacheConfiguration(Environment env) {
+        this.env = env;
+    }
+
+    @PreDestroy
+    public void destroy() {
+        log.info("Closing Cache Manager");
+        Hazelcast.shutdownAll();
+    }
+
     @Bean
-    public javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration(JHipsterProperties jHipsterProperties) {
-        MutableConfiguration<Object, Object> jcacheConfig = new MutableConfiguration<>();
+    public CacheManager cacheManager(HazelcastInstance hazelcastInstance) {
+        log.debug("Starting HazelcastCacheManager");
+        return new com.hazelcast.spring.cache.HazelcastCacheManager(hazelcastInstance);
+    }
+
+    @Bean
+    public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
+        log.debug("Configuring Hazelcast");
+        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("enotes");
+        if (hazelCastInstance != null) {
+            log.debug("Hazelcast already initialized");
+            return hazelCastInstance;
+        }
         Config config = new Config();
-        if (jHipsterProperties.getCache().getRedis().isCluster()) {
-            config.useClusterServers().addNodeAddress(jHipsterProperties.getCache().getRedis().getServer());
-        } else {
-            config.useSingleServer().setAddress(jHipsterProperties.getCache().getRedis().getServer()[0]);
+        config.setInstanceName("enotes");
+        config.getNetworkConfig().setPort(5701);
+        config.getNetworkConfig().setPortAutoIncrement(true);
+
+        // In development, remove multicast auto-configuration
+        if (env.acceptsProfiles(Profiles.of(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT))) {
+            System.setProperty("hazelcast.local.localAddress", "127.0.0.1");
+
+            config.getNetworkConfig().getJoin().getAwsConfig().setEnabled(false);
+            config.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
+            config.getNetworkConfig().getJoin().getTcpIpConfig().setEnabled(false);
         }
-        jcacheConfig.setStatisticsEnabled(true);
-        jcacheConfig.setExpiryPolicyFactory(CreatedExpiryPolicy.factoryOf(new Duration(TimeUnit.SECONDS, jHipsterProperties.getCache().getRedis().getExpiration())));
-        return RedissonConfiguration.fromInstance(Redisson.create(config), jcacheConfig);
+        config.getMapConfigs().put("default", initializeDefaultMapConfig(jHipsterProperties));
+
+        // Full reference is available at: https://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
+        config.setManagementCenterConfig(initializeDefaultManagementCenterConfig(jHipsterProperties));
+        config.getMapConfigs().put("com.enotes.domain.*", initializeDomainMapConfig(jHipsterProperties));
+        return Hazelcast.newHazelcastInstance(config);
     }
 
-    @Bean
-    public HibernatePropertiesCustomizer hibernatePropertiesCustomizer(javax.cache.CacheManager cm) {
-        return hibernateProperties -> hibernateProperties.put(ConfigSettings.CACHE_MANAGER, cm);
+    private ManagementCenterConfig initializeDefaultManagementCenterConfig(JHipsterProperties jHipsterProperties) {
+        ManagementCenterConfig managementCenterConfig = new ManagementCenterConfig();
+        managementCenterConfig.setEnabled(jHipsterProperties.getCache().getHazelcast().getManagementCenter().isEnabled());
+        managementCenterConfig.setUrl(jHipsterProperties.getCache().getHazelcast().getManagementCenter().getUrl());
+        managementCenterConfig.setUpdateInterval(jHipsterProperties.getCache().getHazelcast().getManagementCenter().getUpdateInterval());
+        return managementCenterConfig;
     }
 
-    @Bean
-    public JCacheManagerCustomizer cacheManagerCustomizer(javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration) {
-        return cm -> {
-            createCache(cm, com.enotes.repository.UserRepository.USERS_BY_LOGIN_CACHE, jcacheConfiguration);
-            createCache(cm, com.enotes.repository.UserRepository.USERS_BY_EMAIL_CACHE, jcacheConfiguration);
-            createCache(cm, com.enotes.domain.User.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Authority.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.User.class.getName() + ".authorities", jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Person.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.UserPreference.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Preference.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.PreferenceType.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Language.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Gender.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.AddressType.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Address.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.OtpAuth.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.StatusCategory.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Status.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceCategory.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Service.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceDefinition.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceProvider.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceFacility.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Frequency.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceProviderRole.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceEntry.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceEntryStatusLog.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ServiceEntryTimeLog.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.GeoType.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.GeoAssocType.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Geo.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.GeoAssoc.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.GeoPoint.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.ProductStore.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.FacilityType.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.FacilityGroupType.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.FacilityGroup.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.Facility.class.getName(), jcacheConfiguration);
-            createCache(cm, com.enotes.domain.FacilityUser.class.getName(), jcacheConfiguration);
-            // jhipster-needle-redis-add-entry
-        };
+    private MapConfig initializeDefaultMapConfig(JHipsterProperties jHipsterProperties) {
+        MapConfig mapConfig = new MapConfig();
+
+        /*
+        Number of backups. If 1 is set as the backup-count for example,
+        then all entries of the map will be copied to another JVM for
+        fail-safety. Valid numbers are 0 (no backup), 1, 2, 3.
+        */
+        mapConfig.setBackupCount(jHipsterProperties.getCache().getHazelcast().getBackupCount());
+
+        /*
+        Valid values are:
+        NONE (no eviction),
+        LRU (Least Recently Used),
+        LFU (Least Frequently Used).
+        NONE is the default.
+        */
+        mapConfig.setEvictionPolicy(EvictionPolicy.LRU);
+
+        /*
+        Maximum size of the map. When max size is reached,
+        map is evicted based on the policy defined.
+        Any integer between 0 and Integer.MAX_VALUE. 0 means
+        Integer.MAX_VALUE. Default is 0.
+        */
+        mapConfig.setMaxSizeConfig(new MaxSizeConfig(0, MaxSizeConfig.MaxSizePolicy.USED_HEAP_SIZE));
+
+        return mapConfig;
     }
 
-    private void createCache(javax.cache.CacheManager cm, String cacheName, javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration) {
-        javax.cache.Cache<Object, Object> cache = cm.getCache(cacheName);
-        if (cache == null) {
-            cm.createCache(cacheName, jcacheConfiguration);
-        }
+    private MapConfig initializeDomainMapConfig(JHipsterProperties jHipsterProperties) {
+        MapConfig mapConfig = new MapConfig();
+        mapConfig.setTimeToLiveSeconds(jHipsterProperties.getCache().getHazelcast().getTimeToLiveSeconds());
+        return mapConfig;
     }
 
 }

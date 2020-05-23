@@ -97,16 +97,14 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: NzY5MTRhMzZmMWIyYjYwYWZlYTgwODZmYmY3ZTk0ZmFhMTA4YjA5OTBmODUxN2IyNjU5OTczOWU1MjQ5ZjA1YTRlOWYyZjMyNzMzNWE3OTJhYTk5ZTQxNzE0OTBlMGUzYWJmNzE3YmJlYTRkMmI5Zjg0ZjRhMjRlMzdmOTlmYjg=
+        base64-secret: ZWJhYmY2NWQ0Y2RkYTQ2Yzg3ZWZjYWUzZmY2YmYwZTExZjIwZjAyYmI0MmZkNDA0YjY4NzkwOTVmZGM4MWQzOTc2N2FiMzZkOGZmYTIwODYyNjhlOTdkY2JmYzI1NjFmZGJhOTE1NWEzZjYxZWIxYjZiNmJiNDNmNzQyMmQ4Y2Y=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:
     logs: # Reports metrics in the logs
       enabled: true
       report-frequency: 60 # in seconds
-  cache:
-    redis:
-      server: ${redis.test.server}
+
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

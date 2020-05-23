@@ -20,7 +20,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200522221700",
+    "changelogDate": "20200523062200",
     "entityTableName": "facility_type",
     "dto": "no",
     "pagination": "no",

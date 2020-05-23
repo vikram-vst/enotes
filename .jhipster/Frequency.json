@@ -20,7 +20,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200522220600",
+    "changelogDate": "20200523061100",
     "entityTableName": "frequency",
     "dto": "no",
     "pagination": "no",

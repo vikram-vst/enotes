@@ -32,7 +32,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200522220100",
+    "changelogDate": "20200523060600",
     "entityTableName": "service_category",
     "dto": "no",
     "pagination": "no",

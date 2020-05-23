@@ -34,7 +34,7 @@
             "otherEntityField": "title"
         }
     ],
-    "changelogDate": "20200522220400",
+    "changelogDate": "20200523060900",
     "entityTableName": "service_provider",
     "dto": "no",
     "pagination": "no",

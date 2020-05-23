@@ -1,12 +1,10 @@
 package com.enotes.web.rest;
 
-import com.enotes.RedisTestContainerExtension;
 import com.enotes.EnotesApp;
 import com.enotes.domain.User;
 import com.enotes.repository.UserRepository;
 import com.enotes.web.rest.vm.LoginVM;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,7 +28,6 @@ import static org.hamcrest.Matchers.not;
  */
 @AutoConfigureMockMvc
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith(RedisTestContainerExtension.class)
 public class UserJWTControllerIT {
 
     @Autowired

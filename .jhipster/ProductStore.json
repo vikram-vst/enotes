@@ -28,7 +28,7 @@
             "otherEntityField": "login"
         }
     ],
-    "changelogDate": "20200522221600",
+    "changelogDate": "20200523062100",
     "entityTableName": "product_store",
     "dto": "no",
     "pagination": "no",

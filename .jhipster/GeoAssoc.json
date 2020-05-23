@@ -24,7 +24,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20200522221400",
+    "changelogDate": "20200523061900",
     "entityTableName": "geo_assoc",
     "dto": "no",
     "pagination": "no",

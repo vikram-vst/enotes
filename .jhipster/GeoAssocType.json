@@ -12,7 +12,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200522221200",
+    "changelogDate": "20200523061700",
     "entityTableName": "geo_assoc_type",
     "dto": "no",
     "pagination": "no",

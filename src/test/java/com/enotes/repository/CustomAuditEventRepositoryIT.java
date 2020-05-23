@@ -2,13 +2,11 @@ package com.enotes.repository;
 
 import com.enotes.EnotesApp;
 
-import com.enotes.RedisTestContainerExtension;
 import com.enotes.config.Constants;
 import com.enotes.config.audit.AuditEventConverter;
 import com.enotes.domain.PersistentAuditEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,7 +29,6 @@ import static com.enotes.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN
  * Integration tests for {@link CustomAuditEventRepository}.
  */
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith(RedisTestContainerExtension.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

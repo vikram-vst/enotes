@@ -19,7 +19,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200522220700",
+    "changelogDate": "20200523061200",
     "entityTableName": "service_provider_role",
     "dto": "no",
     "pagination": "no",

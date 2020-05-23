@@ -65,7 +65,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20200522220800",
+    "changelogDate": "20200523061300",
     "entityTableName": "service_entry",
     "dto": "no",
     "pagination": "no",

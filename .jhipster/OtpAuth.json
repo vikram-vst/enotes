@@ -72,7 +72,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20200522215800",
+    "changelogDate": "20200523060300",
     "entityTableName": "otp_auth",
     "dto": "no",
     "pagination": "no",

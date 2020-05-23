@@ -27,7 +27,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20200522222100",
+    "changelogDate": "20200523062600",
     "entityTableName": "facility_user",
     "dto": "no",
     "pagination": "no",

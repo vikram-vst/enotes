@@ -20,7 +20,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20200522215200",
+    "changelogDate": "20200523055700",
     "entityTableName": "preference",
     "dto": "no",
     "pagination": "no",

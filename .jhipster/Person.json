@@ -103,7 +103,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20200522215000",
+    "changelogDate": "20200523055500",
     "entityTableName": "person",
     "dto": "no",
     "pagination": "no",

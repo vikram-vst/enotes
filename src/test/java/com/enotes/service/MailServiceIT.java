@@ -2,13 +2,11 @@ package com.enotes.service;
 
 import com.enotes.config.Constants;
 
-import com.enotes.RedisTestContainerExtension;
 import com.enotes.EnotesApp;
 import com.enotes.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.MockitoAnnotations;
@@ -43,7 +41,6 @@ import static org.mockito.Mockito.*;
  * Integration tests for {@link MailService}.
  */
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith(RedisTestContainerExtension.class)
 public class MailServiceIT {
 
     private static final String[] languages = {

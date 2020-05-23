@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "authenticationType": "jwt",
-    "cacheProvider": "redis",
+    "cacheProvider": "hazelcast",
     "clientFramework": "angularX",
     "serverPort": "8080",
     "serviceDiscoveryType": false,
@@ -29,10 +29,10 @@
     "useSass": true,
     "clientPackageManager": "npm",
     "jhipsterVersion": "6.8.0",
-    "creationTimestamp": 1590184140884,
+    "creationTimestamp": 1590213240895,
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "jwtSecretKey": "NzY5MTRhMzZmMWIyYjYwYWZlYTgwODZmYmY3ZTk0ZmFhMTA4YjA5OTBmODUxN2IyNjU5OTczOWU1MjQ5ZjA1YTRlOWYyZjMyNzMzNWE3OTJhYTk5ZTQxNzE0OTBlMGUzYWJmNzE3YmJlYTRkMmI5Zjg0ZjRhMjRlMzdmOTlmYjg=",
+    "jwtSecretKey": "ZWJhYmY2NWQ0Y2RkYTQ2Yzg3ZWZjYWUzZmY2YmYwZTExZjIwZjAyYmI0MmZkNDA0YjY4NzkwOTVmZGM4MWQzOTc2N2FiMzZkOGZmYTIwODYyNjhlOTdkY2JmYzI1NjFmZGJhOTE1NWEzZjYxZWIxYjZiNmJiNDNmNzQyMmQ4Y2Y=",
     "embeddableLaunchScript": false,
     "entitySuffix": "",
     "dtoSuffix": "DTO",

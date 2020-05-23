@@ -1,7 +1,6 @@
 package com.enotes.web.rest;
 
 import com.enotes.EnotesApp;
-import com.enotes.RedisTestContainerExtension;
 import io.github.jhipster.config.JHipsterProperties;
 import com.enotes.config.audit.AuditEventConverter;
 import com.enotes.domain.PersistentAuditEvent;
@@ -11,7 +10,6 @@ import com.enotes.security.AuthoritiesConstants;
 import com.enotes.service.AuditEventService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,7 +37,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith(RedisTestContainerExtension.class)
 @Transactional
 public class AuditResourceIT {
 

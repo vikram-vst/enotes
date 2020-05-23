@@ -34,7 +34,7 @@
             "otherEntityField": "login"
         }
     ],
-    "changelogDate": "20200522215100",
+    "changelogDate": "20200523055600",
     "entityTableName": "user_preference",
     "dto": "no",
     "pagination": "no",

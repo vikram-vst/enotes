@@ -1,12 +1,10 @@
 package com.enotes.config.timezone;
 
 import com.enotes.EnotesApp;
-import com.enotes.RedisTestContainerExtension;
 import com.enotes.repository.timezone.DateTimeWrapper;
 import com.enotes.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,7 +21,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Integration tests for the UTC Hibernate configuration.
  */
 @SpringBootTest(classes = EnotesApp.class)
-@ExtendWith(RedisTestContainerExtension.class)
 public class HibernateTimeZoneIT {
 
     @Autowired

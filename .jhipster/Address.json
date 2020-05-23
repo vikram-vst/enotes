@@ -113,7 +113,7 @@
             "otherEntityField": "login"
         }
     ],
-    "changelogDate": "20200522215700",
+    "changelogDate": "20200523060200",
     "entityTableName": "address",
     "dto": "no",
     "pagination": "no",

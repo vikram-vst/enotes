@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity ServiceDefinition.
+    -->
+    <changeSet id="20200523060800-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="service_definition"
+                                 constraintName="fk_service_definition_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="status"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_id"
+                                 baseTableName="service_definition"
+                                 constraintName="fk_service_definition_service_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service"/>
+
+    </changeSet>
+</databaseChangeLog>
